@@ -22,21 +22,22 @@ app.get("/", (req, res) => {
   res.send("/ route initiated");
 });
 
-app.get("/add", async (req, res) => {
-  const sample = new dataModel({
-    timestamp: new Date(),
-    panel_id: "PANEL-1",
-    voltage: 12.3,
-    current: 1.2,
-    irradiance: 450,
-    panel_temp: 25,
-    ambient_temp: 22,
-    dust: 0.12,
-    pressure: 1012,
-    humidity: 55,
-    source: "test",
-  });
+// sample data insertion
+// app.get("/add", async (req, res) => {
+//   const sample = new dataModel({
+//     timestamp: new Date(),
+//     panel_id: "PANEL-1",
+//     voltage: 12.3,
+//     current: 1.2,
+//     irradiance: 450,
+//     panel_temp: 25,
+//     ambient_temp: 22,
+//     dust: 0.12,
+//     pressure: 1012,
+//     humidity: 55,
+//     source: "test",
+//   });
 
-  await sample.save();
-  res.send("Sample data added");
-});
+//   await sample.save();
+//   res.send("Sample data added");
+// });

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const idata = require("./data1.js");
+const initData = require("./data1.js");
 const dataModel = require("../models/dataModel.js");
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/testdata1";
@@ -16,7 +16,7 @@ async function main() {
 
 const initDB = async () => {
   await dataModel.deleteMany({});
-  await dataModel.insertMany(idata.data);
+  await dataModel.insertMany(initData.data);
   console.log("Data Initialized");
 };
 
