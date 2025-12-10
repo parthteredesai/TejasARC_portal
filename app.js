@@ -3,9 +3,17 @@ const app = express();
 const mongoose = require("mongoose");
 const port = 8080;
 const dataModel = require("./models/dataModel.js");
+const path = require("path");
+const ejsMate = require("ejs-mate");
+
 app.listen(port, () => {
   console.log(`Server is listening to port ${port}`);
 });
+
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+app.engine("ejs", ejsMate);
+app.use(express.static(path.join(__dirname, "/public")));
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/testdata1";
 main()
@@ -19,7 +27,7 @@ async function main() {
 }
 
 app.get("/", (req, res) => {
-  res.send("/ route initiated");
+  res.redirect("/main");
 });
 
 // sample data insertion
@@ -41,3 +49,7 @@ app.get("/", (req, res) => {
 //   await sample.save();
 //   res.send("Sample data added");
 // });
+
+app.get("/main", (req, res) => {
+  res.render("routes/main");
+});
