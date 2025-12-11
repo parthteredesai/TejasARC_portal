@@ -1,6 +1,6 @@
 body {
   font-family: "Source Sans 3" !important;
-  background-color: #b7d0fa !important;
+  background-color: white !important;
 }
 .navbar {
   height: 4rem;
@@ -18,7 +18,7 @@ body {
 }
 .cardx {
   /* color used to softly clip top and bottom of the .words container */
-  background-color: #b7d0fa;
+  background-color: white;
   padding: 1rem 2rem;
   border-radius: 1.25rem;
 }
