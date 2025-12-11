@@ -53,3 +53,7 @@ app.get("/", (req, res) => {
 app.get("/main", (req, res) => {
   res.render("routes/main");
 });
+
+app.get("/dashboard", (req, res) => {
+  res.render("routes/dashboard");
+});

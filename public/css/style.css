@@ -4,17 +4,18 @@ body {
 }
 .navbar {
   height: 4rem;
-  background-color: #b9faf8 !important;
+  background-color: #0466c8 !important;
 }
 .logo {
-  color: blue;
+  color: #fbfbfe;
   font-size: 45px;
   margin-right: 0.5rem;
   margin-left: 1rem;
 }
 .navbar-brand {
   font-size: 35px !important;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
+  color: #fbfbfe !important;
 }
 .cardx {
   /* color used to softly clip top and bottom of the .words container */
@@ -102,4 +103,27 @@ body {
     -webkit-transform: translateY(-400%);
     transform: translateY(-400%);
   }
+}
+
+.mainContainer {
+  margin: 0rem;
+}
+
+.sec1 {
+  height: 100vh;
+  width: 13rem;
+  margin-left: 0.8rem;
+  margin-top: 0.5rem;
+  border-radius: 7px;
+  border: 1px solid black;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+.sub-sec1 {
+  height: 20rem;
+  width: 11.8rem;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid black;
 }
