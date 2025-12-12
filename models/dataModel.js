@@ -19,6 +19,7 @@ const dataSchema = new Schema({
   pressure: Number,
   humidity: Number,
   source: String,
+  efficiency: Number,
 });
 
 const dataModel = mongoose.model("dataModel", dataSchema);

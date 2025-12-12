@@ -11,6 +11,7 @@ const sampleData1 = [
     pressure: 987.654,
     humidity: 37.459,
     source: "esp32",
+    efficiency: 78.42,
   },
   {
     timestamp: "2025-02-05T12:10:00Z",
@@ -24,6 +25,7 @@ const sampleData1 = [
     pressure: 1012.752,
     humidity: 85.39,
     source: "esp32",
+    efficiency: 64.19,
   },
   {
     timestamp: "2025-02-05T12:20:00Z",
@@ -37,6 +39,7 @@ const sampleData1 = [
     pressure: 1016.842,
     humidity: 12.468,
     source: "esp32",
+    efficiency: 71.55,
   },
   {
     timestamp: "2025-02-05T12:30:00Z",
@@ -50,6 +53,7 @@ const sampleData1 = [
     pressure: 994.73,
     humidity: 67.826,
     source: "esp32",
+    efficiency: 82.73,
   },
   {
     timestamp: "2025-02-05T12:40:00Z",
@@ -63,6 +67,7 @@ const sampleData1 = [
     pressure: 953.61,
     humidity: 26.079,
     source: "esp32",
+    efficiency: 69.88,
   },
   {
     timestamp: "2025-02-05T12:50:00Z",
@@ -76,6 +81,7 @@ const sampleData1 = [
     pressure: 1014.533,
     humidity: 69.315,
     source: "esp32",
+    efficiency: 74.12,
   },
   {
     timestamp: "2025-02-05T13:00:00Z",
@@ -89,6 +95,7 @@ const sampleData1 = [
     pressure: 1015.67,
     humidity: 30.592,
     source: "esp32",
+    efficiency: 80.67,
   },
   {
     timestamp: "2025-02-05T13:10:00Z",
@@ -102,6 +109,7 @@ const sampleData1 = [
     pressure: 964.403,
     humidity: 15.161,
     source: "esp32",
+    efficiency: 77.29,
   },
   {
     timestamp: "2025-02-05T13:20:00Z",
@@ -115,6 +123,7 @@ const sampleData1 = [
     pressure: 952.575,
     humidity: 27.677,
     source: "esp32",
+    efficiency: 83.91,
   },
   {
     timestamp: "2025-02-05T13:30:00Z",
@@ -128,6 +137,7 @@ const sampleData1 = [
     pressure: 975.493,
     humidity: 34.535,
     source: "esp32",
+    efficiency: 68.44,
   },
 ];
 
