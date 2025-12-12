@@ -30,10 +30,12 @@
       <div class="sub-sec2-2">
         2
         <div class="sub-sec2-2x"> 
+
+          <!-- /////////////  Bus Voltage Graph code logic   ////////////// -->
           <h3>Voltage Chart (Last 20 Records)</h3>
           <canvas id="busVoltageChart"></canvas>
           <script>
-        async function loadSolarData() {
+            async function loadSolarData() {
             const res = await fetch("/api/solar"); 
             const data = await res.json();
 
@@ -62,8 +64,9 @@
         }
 
         loadSolarData();
-    </script>
+        </script>
         </div>
+        <!-- ////////////////////////////////////////////////////////// -->
       </div>
       <div class="sub-sec2-3">
         3

@@ -64,6 +64,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 
@@ -189,7 +190,7 @@ body {
 
 .sub-sec2-2x h3 {
   margin-top: 0.8rem;
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 
 .sub-sec2-3x { 
