@@ -54,8 +54,9 @@ app.get("/main", (req, res) => {
   res.render("routes/main");
 });
 
-app.get("/dashboard", (req, res) => {
-  res.render("routes/dashboard");
+app.get("/dashboard", async (req, res) => {
+  const allData = await dataModel.find({});
+  res.render("routes/dashboard", { allData });
 });
 
 app.get("/panel", (req, res) => {

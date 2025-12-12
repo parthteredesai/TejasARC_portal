@@ -14,5 +14,8 @@
     "ejs-mate": "^4.0.0",
     "express": "^5.2.1",
     "mongoose": "^9.0.1"
+  },
+  "devDependencies": {
+    "prettier-plugin-ejs": "^1.0.3"
   }
 }

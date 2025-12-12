@@ -2,13 +2,26 @@
 <body>
   <div class="dashContainer">
     <div class="sec1">
-      sec1
       <div class="sub-sec1">1</div>
-      <div class="sub-sec1">2</div>
+
+      <div class="sub-sec1">
+        <h4 class="efficiencytext"> Efficiency Tracker</h4>
+        <% 
+          const efficiencyValue = allData[allData.length - 1].efficiency; 
+          const filledAngle = (efficiencyValue / 100) * 360; 
+        %>
+        <div class="efficiency-container">
+            <span class="efficiency-value"><%= efficiencyValue %>%</span>
+            <div class="progress-circle" 
+                 style="--filled-angle: <%= filledAngle %>deg;">
+            </div>
+        </div>
+      </div>
+
       <div class="sub-sec1">3</div>
     </div>
     <div class="sec2">
-      sec2
+      <p class="dashIntro">Welcome to Dashboard</p>
       <div class="sub-sec2-1">
         <div class="sub-sec2-1x">1x</div>
         <div class="sub-sec2-1x">2x</div>

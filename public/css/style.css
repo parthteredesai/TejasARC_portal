@@ -16,6 +16,8 @@ body {
 
 .navbar-brand {
   font-size: 35px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
   font-family: "Play", sans-serif;
   color: #fdfcdc !important;
 }
@@ -34,6 +36,18 @@ body {
 /* at /main */
 
 /* at dashboard */
+.dashIntro {
+  color: #2c3e50;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+ 
+  font-family: "lilex", sans-serif; 
+  margin-top: 0.7rem;
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .dashContainer {
   display: flex;
   flex-direction: row;
@@ -51,13 +65,24 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
+
 .sub-sec1 {
-  height: 15rem;
+  height: 18rem;
   width: 11.8rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
   border: 1px solid black;
+  
+  
+  position: relative; 
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .sec2 {
@@ -73,14 +98,63 @@ body {
   justify-content: space-between;
 }
 
+/* --- 2. Efficiency Chart Styling --- */
+.efficiency-container {
+    width: 11rem; 
+    height: 11rem; 
+    
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-text {
+    position: absolute;
+    top: 5px; 
+    color: #2c3e50;
+    margin: 0;
+}
+
+.efficiency-value {
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    
+    font-size: 1.5em; 
+    font-weight: 700; 
+    color: #2c3e50;
+    z-index: 2; 
+}
+
+.progress-circle {
+    width: 100%; 
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    
+    background: conic-gradient(
+        #1abc9c 0deg, 
+        #1abc9c var(--filled-angle),
+        #ecf0f1 var(--filled-angle),
+        #ecf0f1 360deg
+    );
+    
+    mask: radial-gradient(transparent 50px, white 50px);
+    -webkit-mask: radial-gradient(transparent 50px, white 50px);
+}
+
 .sub-sec2-1 {
   margin: 0.5rem;
-  height: 10rem;
+  height: 10rem; 
   border-radius: 7px;
   border: 1px solid black;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .sub-sec2-2 {
   margin: 0.5rem;
@@ -89,7 +163,6 @@ body {
   border: 1px solid black;
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
 }
 .sub-sec2-3 {
   margin: 0.5rem;
@@ -98,29 +171,36 @@ body {
   border: 1px solid black;
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
 }
 
-.sub-sec2-1x {
-  width: 20rem;
-  margin: 0.3rem;
-  border-radius: 7px;
-  border: 1px solid black;
+.sub-sec2-1x { 
+    width: 20rem; 
+    margin: 0.3rem; 
+    border-radius: 7px; 
+    border: 1px solid black; 
 }
 
-.sub-sec2-2x {
-  width: 25rem;
-  margin: 0.3rem;
-  border-radius: 7px;
-  border: 1px solid black;
+.sub-sec2-2x { 
+    width: 25rem; 
+    margin: 0.3rem; 
+    border-radius: 7px; 
+    border: 1px solid black; 
 }
 
-.sub-sec2-3x {
-  width: 25rem;
-  margin: 0.3rem;
-  border-radius: 7px;
-  border: 1px solid black;
+.sub-sec2-3x { 
+    width: 25rem; 
+    margin: 0.3rem; 
+    border-radius: 7px; 
+    border: 1px solid black; 
 }
+
+.efficiencytext{
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  margin-top: 0.5rem !important;
+  margin-left: 1rem;
+}
+
 /* --- Global & Panel Wrapper Styling --- */
 
 /* Unique class name for the panel structure */
