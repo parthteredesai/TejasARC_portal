@@ -29,7 +29,41 @@
       </div>
       <div class="sub-sec2-2">
         2
-        <div class="sub-sec2-2x">30 days trend graph</div>
+        <div class="sub-sec2-2x"> 
+          <h3>Voltage Chart (Last 20 Records)</h3>
+          <canvas id="voltageChart"></canvas>
+          <script>
+        async function loadSolarData() {
+            const res = await fetch("/api/solar"); 
+            const data = await res.json();
+
+            const N = 10;
+            const recent = data.slice(-N).reverse();
+
+            const labels = recent.map(d => 
+                new Date(d.timestamp).toLocaleTimeString()
+            );
+
+            const voltage = recent.map(d => d.voltage);
+
+            new Chart(document.getElementById("voltageChart"), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: "Voltage (V)",
+                        data: voltage,
+                        borderWidth: 2,
+                        borderColor: "blue",
+                        tension: 0.3
+                    }]
+                }
+            });
+        }
+
+        loadSolarData();
+    </script>
+        </div>
       </div>
       <div class="sub-sec2-3">
         3

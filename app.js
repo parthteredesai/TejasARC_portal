@@ -59,6 +59,11 @@ app.get("/dashboard", async (req, res) => {
   res.render("routes/dashboard", { allData });
 });
 
+app.get("/api/solar", async (req, res) => {
+    const data = await dataModel.find().sort({ timestamp: -1 });
+    res.json(data);
+});
+
 app.get("/panel", (req, res) => {
   res.render("routes/panel");
 });
