@@ -7,7 +7,7 @@
       <div class="sub-sec1">
         <h4 class="efficiencytext"> Efficiency Tracker</h4>
         <% 
-          const efficiencyValue = allData[allData.length - 1].efficiency; 
+          const efficiencyValue = allData[allData.length - 1].ai_output.predicted_efficiency; 
           const filledAngle = (efficiencyValue / 100) * 360; 
         %>
         <div class="efficiency-container">
@@ -31,27 +31,27 @@
         2
         <div class="sub-sec2-2x"> 
           <h3>Voltage Chart (Last 20 Records)</h3>
-          <canvas id="voltageChart"></canvas>
+          <canvas id="busVoltageChart"></canvas>
           <script>
         async function loadSolarData() {
             const res = await fetch("/api/solar"); 
             const data = await res.json();
 
-            const N = 10;
+            const N = 20;
             const recent = data.slice(-N).reverse();
 
             const labels = recent.map(d => 
                 new Date(d.timestamp).toLocaleTimeString()
             );
 
-            const voltage = recent.map(d => d.voltage);
+            const voltage = recent.map(d => d.sensors.bus_voltage);
 
-            new Chart(document.getElementById("voltageChart"), {
+            new Chart(document.getElementById("busVoltageChart"), {
                 type: 'line',
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: "Voltage (V)",
+                        label: "Bus Voltage (V)",
                         data: voltage,
                         borderWidth: 2,
                         borderColor: "blue",
