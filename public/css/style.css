@@ -162,11 +162,13 @@ body {
 }
 
 .healthtext{
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-family: "Space Grotesk", sans-serif;
-  margin-top: 0.5rem !important;
+  /* margin-top: 0.5rem !important; */
   margin-left: 0.3rem;
   font-weight: 600;
+  /* padding-left: 0.8rem; */
+  text-align: center;
 }
 
 .health-value {
