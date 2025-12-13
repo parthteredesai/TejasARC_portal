@@ -32,8 +32,14 @@
         <div class="sub-sec2-2x"> 
 
           <!-- /////////////  Bus Voltage Graph code logic   ////////////// -->
-          <h3>Voltage Chart (Last 20 Records)</h3>
-          <canvas id="busVoltageChart"></canvas>
+           <div class="busVoltagetitle">
+             <h3>Voltage Chart (Last 20 Records)</h3>
+          </div> 
+
+          <div class="busVoltageChart">
+            <canvas id="busVoltageChart"></canvas>
+          </div>
+
           <script>
             async function loadSolarData() {
             const res = await fetch("/api/solar"); 
@@ -59,6 +65,10 @@
                         borderColor: "blue",
                         tension: 0.3
                     }]
+                },
+                options: {
+                        responsive: true,
+                        maintainAspectRatio: false 
                 }
             });
         }

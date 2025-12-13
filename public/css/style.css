@@ -182,15 +182,33 @@ body {
 }
 
 .sub-sec2-2x { 
-    width: 25rem; 
+    width: 25rem;
     margin: 0.3rem; 
     border-radius: 7px; 
     border: 1px solid black; 
 }
 
-.sub-sec2-2x h3 {
-  margin-top: 0.8rem;
-  margin-left: 2rem;
+/* busVoltageChart sizing using two different divs to divide sub-sec2-2x */
+
+.busVoltagetitle{
+  width: 25rem;
+  height: 2rem;
+  padding-left: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.busVoltageChart{
+  margin-top: 1rem;
+  width: 25rem;
+  height: 14rem;
+  padding: 0.5rem;
+  position: relative; 
+}
+
+.busVoltageChart canvas {
+  margin: 0.5rem;
+  position: absolute;
+  inset: 0;
 }
 
 .sub-sec2-3x { 
@@ -207,9 +225,6 @@ body {
   margin-left: 1rem;
 }
 
-#busVoltageChart{
-  margin: 0.8rem;
-}
 
 
 /* --- Global & Panel Wrapper Styling --- */
