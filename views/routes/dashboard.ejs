@@ -30,7 +30,30 @@
         </div>
       </div>
 
-      <div class="sub-sec1">3</div>
+      <div class="sub-sec1">
+        <% 
+          const statusString = allData[allData.length - 1].ai_output.status; 
+        %>
+        <h4 class="status">Panel status: <%= statusString %></h4>
+         <div class="solar-panel-container">
+           <div class="solar-cell-unit"></div>
+           <div class="solar-cell-unit"></div>
+           <div class="solar-cell-unit"></div>
+           <div class="solar-cell-unit"></div>
+           <div class="solar-cell-unit"></div>
+           <div class="solar-cell-unit"></div>
+           <div class="solar-cell-unit"></div>
+           <div class="solar-cell-unit"></div>
+           <div class="solar-cell-unit"></div>
+           <div class="solar-cell-unit"></div>
+           <div class="solar-cell-unit"></div>
+           <div class="solar-cell-unit"></div>
+           <div class="solar-cell-unit"></div>
+           <div class="solar-cell-unit"></div>
+           <div class="solar-cell-unit"></div>
+           <div class="solar-cell-unit"></div>
+         </div>
+       </div>
     </div>
     <div class="sec2">
       <p class="dashIntro">Welcome to Dashboard</p>
