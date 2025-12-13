@@ -2,7 +2,19 @@
 <body>
   <div class="dashContainer">
     <div class="sec1">
-      <div class="sub-sec1">1</div>
+      <div class="sub-sec1">
+        <h4 class="healthtext"> Efficiency Tracker</h4>
+        <% 
+          const healthValue = allData[allData.length - 1].ai_output.panel_health_score; 
+          const healthfilledAngle = (healthValue / 100) * 360; 
+        %>
+        <div class="health-container">
+            <span class="health-value"><%= healthValue %>%</span>
+            <div class="progress-circle-health" 
+                 style="--filled-angle: <%= healthfilledAngle %>deg;">
+            </div>
+        </div>
+      </div>
 
       <div class="sub-sec1">
         <h4 class="efficiencytext"> Efficiency Tracker</h4>
