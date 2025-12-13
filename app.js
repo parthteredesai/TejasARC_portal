@@ -5,6 +5,7 @@ const port = 8080;
 const dataModel = require("./models/dataModel.js");
 const path = require("path");
 const ejsMate = require("ejs-mate");
+require("dotenv").config();
 
 app.listen(port, () => {
   console.log(`Server is listening to port ${port}`);
@@ -55,9 +56,41 @@ app.get("/main", (req, res) => {
 });
 
 app.get("/dashboard", async (req, res) => {
+  // Fetch MongoDB data
   const allData = await dataModel.find({});
-  res.render("routes/dashboard", { allData });
+
+  // Weather API setup
+  const CITY = "Mumbai"; // change city as needed
+  const API_KEY = process.env.OPENWEATHER_API_KEY;
+
+  // Use your exact URL format
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=metric`;
+
+  // Fetch weather
+  const response = await fetch(url);
+  const weatherData = await response.json();
+
+  // Prepare weather object
+  const weather = response.ok
+    ? {
+        city: weatherData.name,
+        city_lon:weatherData.coord.lon,
+        city_lat:weatherData.coord.lat,
+        description:weatherData.description,
+        temp: weatherData.main.temp,
+        sealvl: weatherData.main.sea_level,
+        gndlvl: weatherData.main.grnd_level,
+        humidity: weatherData.main.humidity,
+        pressure: weatherData.main.pressure,
+        wind: weatherData.wind.speed,
+        condition: weatherData.weather[0].main,
+      }
+    : null;
+
+  // Render EJS with MongoDB + weather data
+  res.render("routes/dashboard", { allData, weather });
 });
+
 
 app.get("/api/solar", async (req, res) => {
     const data = await dataModel.find().sort({ timestamp: -1 });

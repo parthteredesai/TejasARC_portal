@@ -282,13 +282,14 @@ body {
 
 .sub-sec2-1 {
   margin: 0.5rem;
-  height: 10rem; 
+  height: 15.5rem; 
   border-radius: 7px;
   border: 1px solid black;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   flex-wrap: wrap;
+  /* flex: 1 1 auto; */
 }
 .sub-sec2-2 {
   margin: 0.5rem;
@@ -309,14 +310,44 @@ body {
   display: flex;
   flex-direction: row;
 }
-
-.sub-sec2-1x { 
-    width: 19.2rem; 
+/* --------------------------------------------------- */
+.sub-sec2-1x1 { 
+    width: 16rem; 
+    height: 14.5rem;
     margin: 0.3rem; 
     border-radius: 7px; 
     border: 1px solid black; 
 }
 
+.sub-sec2-1x2 { 
+    width: 26rem; 
+    height: 14.5rem;
+    margin: 0.3rem; 
+    border-radius: 7px; 
+    border: 1px solid black; 
+    
+    
+    display: flex;           
+    flex-direction: row; 
+}
+
+.weather1{
+    
+    width: 12.5rem;
+    border: 1px solid black;
+    padding-top: 0.5rem;
+}
+
+.weather-title {
+  font-size: 1.5rem;
+  font-family: "Space Grotesk";
+  font-weight: 600;
+  padding-left: 0.5rem;
+}
+
+
+
+/* ------------------------------------------------------ */
 .sub-sec2-2x { 
     width: 25rem;
     margin: 0.3rem; 
