@@ -28,12 +28,12 @@
         <div class="sub-sec2-1x">3x</div>
       </div>
       <div class="sub-sec2-2">
-        2
+        
         <div class="sub-sec2-2x"> 
 
           <!-- /////////////  Bus Voltage Graph code logic   ////////////// -->
            <div class="busVoltagetitle">
-             <h3>Voltage Chart (Last 20 Records)</h3>
+             <h4> Bus Voltage Chart (Last 20 Records)</h4>
           </div> 
 
           <div class="busVoltageChart">
@@ -77,6 +77,52 @@
         </script>
         </div>
         <!-- ////////////////////////////////////////////////////////// -->
+         <div class="sub-sec2-2x2">
+
+          <div class="shuntVoltagetitle">
+            <h4> Shunt Voltage Chart (Last 20 Records)</h4>
+          </div>
+
+          <div class="shuntVoltageChart">
+            <canvas id="shuntVoltageChart"></canvas>
+          </div>
+          
+          <script>
+            async function loadSolarData2() {
+            const res = await fetch("/api/solar"); 
+            const data = await res.json();
+
+            const N = 20;
+            const recent = data.slice(-N).reverse();
+
+            const labels = recent.map(d => 
+                new Date(d.timestamp).toLocaleTimeString()
+            );
+
+            const sh_voltage = recent.map(d => d.sensors.shunt_voltage);
+
+            new Chart(document.getElementById("shuntVoltageChart"), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: "Shunt Voltage (V)",
+                        data: sh_voltage,
+                        borderWidth: 2,
+                        borderColor: "#c62828",
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                        responsive: true,
+                        maintainAspectRatio: false 
+                }
+            });
+        }
+
+        loadSolarData2();
+        </script>
+         </div>
       </div>
       <div class="sub-sec2-3">
         3
