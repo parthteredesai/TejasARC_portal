@@ -355,7 +355,7 @@ body {
   inset: 0;
 }
 
-/* busVoltageChart sizing using two different divs to divide sub-sec2-2x */
+/* shuntVoltageChart sizing using two different divs to divide sub-sec2-2x */
 
 .shuntVoltagetitle{
   width: 25rem;
