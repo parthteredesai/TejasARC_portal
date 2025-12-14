@@ -290,7 +290,7 @@
                         label: "Bus Voltage (V)",
                         data: voltage,
                         borderWidth: 2,
-                        borderColor: "blue",
+                        borderColor: "#0d4e87",
                         backgroundColor: "rgba(30,136,229,0.15)",
                         tension: 0.3,
                         fill: true
@@ -339,8 +339,8 @@
                         label: "Shunt Voltage (V)",
                         data: sh_voltage,
                         borderWidth: 2,
-                        borderColor: "#c62828",
-                        backgroundColor: "rgba(245, 217, 152,0.45)",
+                        borderColor: "#0f5ff4",
+                        backgroundColor: "rgba(15, 95, 244,0.25)",
                         tension: 0.3,
                         fill: true
 
@@ -357,10 +357,114 @@
         loadSolarData2();
         </script>
          </div>
+         <!-- ----------------current graph------------------ -->
+         <div class="sub-sec2-2x3"> 
+          <div class="currentTitle">
+             <h4> Current Chart (Last 20 Records)</h4>
+          </div>
+           
+          <div class="currentChart">
+            <canvas id="currentChart"></canvas>
+          </div>
+          
+          <script>
+            async function loadSolarData3() {
+            const res = await fetch("/api/solar"); 
+            const data = await res.json();
+
+            const N = 20;
+            const recent = data.slice(-N).reverse();
+
+            const labels = recent.map(d => 
+                new Date(d.timestamp).toLocaleTimeString()
+            );
+
+            const current = recent.map(d => d.sensors.current);
+
+            new Chart(document.getElementById("currentChart"), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: "Current (A)",
+                        data: current,
+                        borderWidth: 2,
+                        borderColor: "#ffac81",
+                        backgroundColor: "rgba(255, 239, 99,0.45)",
+                        tension: 0.3,
+                        fill: true
+
+                    }]
+                },
+                options: {
+                        responsive: true,
+                        maintainAspectRatio: false 
+                        
+                }
+            });
+        }
+
+        loadSolarData3();
+        </script>
+
+         </div>
+         <div class="sub-sec2-2x4">
+
+          <div class="powertitle">
+             <h4> Power Chart (Last 20 Records)</h4>
+          </div>
+           
+          <div class="powerChart">
+            <canvas id="powerChart"></canvas>
+          </div>
+
+          <script>
+            async function loadSolarData4() {
+            const res = await fetch("/api/solar"); 
+            const data = await res.json();
+
+            const N = 20;
+            const recent = data.slice(-N).reverse();
+
+            const labels = recent.map(d => 
+                new Date(d.timestamp).toLocaleTimeString()
+            );
+
+            const power = recent.map(d => d.sensors.power);
+
+            new Chart(document.getElementById("powerChart"), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: "Power (KW)",
+                        data: power,
+                        borderWidth: 2,
+                        borderColor: "#ff8800",
+                        backgroundColor: "rgba(255, 136, 0,0.25)",
+                        tension: 0.3,
+                        fill: true
+
+                    }]
+                },
+                options: {
+                        responsive: true,
+                        maintainAspectRatio: false 
+                        
+                }
+            });
+        }
+
+        loadSolarData4();
+        </script>
+
+         </div>
       </div>
       <div class="sub-sec2-3">
-        3
-        <div class="sub-sec2-3x">sensor data breakdown</div>
+        
+        <div class="sub-sec2-3x1">
+          <h4></h4><i class="fa-solid fa-circle-info"></i>Additional Sensor Data</h4>
+        </div>
       </div>
     </div>
   </div>
