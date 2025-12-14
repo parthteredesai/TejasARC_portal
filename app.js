@@ -76,7 +76,7 @@ app.get("/dashboard", async (req, res) => {
         city: weatherData.name,
         city_lon:weatherData.coord.lon,
         city_lat:weatherData.coord.lat,
-        description:weatherData.description,
+        visibility:weatherData.visibility,
         temp: weatherData.main.temp,
         sealvl: weatherData.main.sea_level,
         gndlvl: weatherData.main.grnd_level,

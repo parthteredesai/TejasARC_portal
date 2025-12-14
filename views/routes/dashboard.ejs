@@ -56,27 +56,37 @@
        </div>
     </div>
     <div class="sec2">
-      <p class="dashIntro">Welcome to Dashboard</p>
+      <p class="dashIntro">Welcome to Dashboard&#128202</p>
       <div class="sub-sec2-1">
         <div class="sub-sec2-1x1">1x</div>
         <div class="sub-sec2-1x1">2x</div>
         <div class="sub-sec2-1x2">
           
-            <div class="weather1">
+            <div class="weather11">
               <div class="weather-title">
-                <p>Weather Now :</p>
+                <p> Weather Now :</p>
               </div>
               <% if (weather) { %>
                 <div class="weather-item"> <i class="fa-solid fa-location-dot"></i> City: <%= weather.city %></div>
-                <div class="weather-item"> <i class="fa-solid fa-globe"></i> City_longitude: <%= weather.city_lon %></div>
-                <div class="weather-item"> <i class="fa-solid fa-globe"></i> City_lattitude: <%= weather.city_lat %></div>
-                <div class="weather-item"> <i class="fa-solid fa-water"></i> City_Sea_Level: <%= weather.sealvl %></div>
-                <div class="weather-item"> <i class="fa-solid fa-landmark"></i></i> City_Ground_Level: <%= weather.gndlvl %></div>
+                <div class="weather-item"> <i class="fa-solid fa-globe"></i> longitude: <%= weather.city_lon %></div>
+                <div class="weather-item"> <i class="fa-solid fa-globe"></i> lattitude: <%= weather.city_lat %></div>
+                <div class="weather-item"> <i class="fa-solid fa-water"></i> Sea Level: <%= weather.sealvl %></div>
+                <div class="weather-item"> <i class="fa-solid fa-landmark"></i></i> Ground Level: <%= weather.gndlvl %></div>
               <% } else { %>
                 <div class="weather-item">Weather data not available</div>
               <% } %>  
             </div>
-            <div class="weather1">2</div>
+            <div class="weather12">
+              <% if (weather) { %>
+                <div class="weather-item"> <i class="fa-solid fa-eye"></i> Visibility : <%= weather.visibility %></div>
+                <div class="weather-item"> <i class="fa-solid fa-temperature-half"></i> Temperature: <%= weather.temp %>&#8451 </div>
+                <div class="weather-item"> <i class="fa-solid fa-smog"></i> Humidity : <%= weather.humidity %>% </div>
+                <div class="weather-item"> <i class="fa-solid fa-smog"></i> Pressure : <%= weather.pressure %> hPa</div>
+                <div class="weather-item"> <i class="fa-solid fa-wind"></i> Wind: <%= weather.wind %></div>
+              <% } else { %>
+                <div class="weather-item">Weather data not available</div>
+              <% } %> 
+            </div>
           
              
         </div>

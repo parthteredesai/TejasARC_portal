@@ -331,11 +331,16 @@ body {
     flex-direction: row; 
 }
 
-.weather1{
-    
+.weather11{
     width: 12.5rem;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding-top: 0.5rem;
+    padding-left: 0.3rem;
+}
+.weather12{
+    width: 12.5rem;
+    /* border: 1px solid black; */
+    padding-top: 3.7rem;
 }
 
 .weather-title {
@@ -343,6 +348,16 @@ body {
   font-family: "Space Grotesk";
   font-weight: 600;
   padding-left: 0.5rem;
+}
+
+.weather-item{
+  font-family: "Montserrat";
+  padding-bottom: 0.3rem;
+
+}
+.weather-item i {
+   font-size: 18px;
+   color: #0081a7;
 }
 
 
