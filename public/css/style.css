@@ -315,21 +315,116 @@ body {
     width: 16rem; 
     height: 14.5rem;
     margin: 0.3rem; 
-    border-radius: 7px; 
-    border: 1px solid black; 
+    border-radius: 30px;
+    border: 1px solid rgb(74, 73, 73); 
 }
 
+.power{
+  background-color: #dbfe87;
+  border: 5px solid #006a4e;
+}
+
+.chip{
+  /* background-color: #011846; */
+  background-image: linear-gradient(to top, #011846, #032e84);
+}
 .sub-sec2-1x2 { 
     width: 26rem; 
     height: 14.5rem;
     margin: 0.3rem; 
-    border-radius: 7px; 
+    border-radius: 30px;
     border: 1px solid black; 
     
     
     display: flex;           
     flex-direction: row; 
 }
+
+.powerGeneratedtitle{
+  font-family: "Space Grotesk";
+  font-weight: 600;
+  padding-left: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.powerGeneratedvalue{
+  padding-left: 5rem;
+  padding-top: 1rem;
+}
+/* -------------chip design------------------- */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.loader {
+  width: 100%;
+}
+
+.trace-bg {
+  stroke: #525151;
+  stroke-width: 2;
+  fill: none;
+}
+
+.trace-flow {
+  stroke-width: 1.8;
+  fill: none;
+  stroke-dasharray: 40 400;
+  stroke-dashoffset: 438;
+  filter: drop-shadow(0 0 6px currentColor);
+  animation: flow 3s cubic-bezier(0.5, 0, 0.9, 1) infinite;
+}
+
+.yellow {
+  stroke: #ffea00;
+  color: #ffea00;
+}
+.blue {
+  stroke: #00ccff;
+  color: #00ccff;
+}
+.green {
+  stroke: #00ff15;
+  color: #00ff15;
+}
+.purple {
+  stroke: #9900ff;
+  color: #9900ff;
+}
+.red {
+  stroke: #ff3300;
+  color: #ff3300;
+}
+
+@keyframes flow {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Čip */
+.chip-body {
+  rx: 20;
+  ry: 20;
+}
+
+/* Text uvnitř čipu */
+.chip-text {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Piny */
+.chip-pin {
+  stroke: #767171;
+  stroke-width: 0.5;
+  filter: drop-shadow(0 0 4px rgba(83, 81, 81, 0.703));
+}
+
 
 .weather11{
     width: 12.5rem;
@@ -340,7 +435,17 @@ body {
 .weather12{
     width: 12.5rem;
     /* border: 1px solid black; */
-    padding-top: 3.7rem;
+    padding-top: 0.1rem;
+}
+
+.weather12 p {
+  font-family: "Montserrat";
+  padding-top: 0.45rem;
+  padding-bottom: 0.3rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-bottom: 0.7rem;
+  font-weight: 600;
 }
 
 .weather-title {
@@ -353,8 +458,10 @@ body {
 .weather-item{
   font-family: "Montserrat";
   padding-bottom: 0.3rem;
+  font-weight: 500;
 
 }
+
 .weather-item i {
    font-size: 18px;
    color: #0081a7;

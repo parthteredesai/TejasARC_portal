@@ -736,7 +736,7 @@ const sampleData1 = [
       "week_trend": "Improvements ahead"
     }
   },
-
+  
   {
     "panel_id": "PANEL_D",
     "timestamp": "2025-12-09T16:00:00Z",
