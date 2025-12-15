@@ -290,7 +290,7 @@ body {
   border: 1px solid black;
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   flex-wrap: wrap;
   /* flex: 1 1 auto; */
 }
@@ -312,6 +312,7 @@ body {
   border: 1px solid black;
   display: flex;
   flex-direction: row;
+   justify-content: space-around;
 }
 /* --------------------------------------------------- */
 .sub-sec2-1x1 { 
@@ -351,7 +352,7 @@ body {
 }
 
 .powerGeneratedvalue{
-  padding-left: 5rem;
+  padding-left: 3rem;
   padding-top: 1rem;
 }
 /* -------------chip design------------------- */
@@ -479,6 +480,7 @@ body {
     margin: 0.3rem; 
     border-radius: 7px; 
     border: 1px solid black; 
+    /* background-color: #fdfcdc; */
 }
 
 .sub-sec2-2x2{
@@ -598,13 +600,83 @@ body {
 
 .sub-sec2-3x1{
    width: 25rem;
-   height: 18rem;
+   height: 17.3rem;
     margin: 0.3rem; 
     border-radius: 7px; 
-    border: 1px solid black; 
+    border: 1px solid black;
+    background-color: #ffe5ec; 
 
 }
+.sub-sec2-3x1 h4{
+  padding-top: 0.5rem;
+  padding-left: 0.3rem;
+  font-family: "Space Grotesk";
+  color: #ff4d6d;
+   ;
+}
+.sub-sec2-3x1 ul{
+    list-style-type: none;
+}
+.sensorDatalist{
+  padding-left: 1.5rem;
+  font-family: "Montserrat";
+  color: #ff4d6d;
+  font-weight: 500;
+}
 
+.sub-sec2-3x2{
+   width: 26rem;
+   height: 17.3rem;
+    margin: 0.3rem; 
+    border-radius: 7px; 
+    border: 1px solid black;
+}
+.sub-sec2-3x2 h2 {
+   font-family: "Space Grotesk";
+   padding-top: 1rem;
+   padding-left: 1rem;
+}
+
+.alert1{
+  width: 25.3rem;
+  height: 6rem;
+  border-radius: 20px; 
+  background-color: #ffe5ec;
+  border: 5px solid #ff0000;
+  border-left: 15px solid #ff0000;
+  margin: 0.3rem;
+}
+
+.alert1 ul{
+  padding-top: 0.6rem;
+  list-style-type: none;
+}
+
+.alert1 li{
+  padding-bottom: 0.15rem;
+   font-family: "Montserrat";
+   font-weight: 500;
+}
+.alert2{
+  width: 25.3rem;
+  height: 6rem;
+  border-radius: 20px;
+  background-color: #d0f4de;
+  border: 5px solid #38b000;
+  border-left: 15px solid #38b000;
+  margin: 0.3rem;
+}
+
+.alert2 ul{
+  padding-top: 0.6rem;
+  list-style-type: none;
+}
+
+.alert2 li{
+  padding-bottom: 0.15rem;
+   font-family: "Montserrat";
+   font-weight: 500;
+}
 
 /* --------------------------------------------------------------- */
 
