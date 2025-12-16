@@ -2,9 +2,12 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const port = 8080;
-const dataModel = require("./models/dataModel.js");
+const dataModel = require("./models/dataModel.js"); //importing (requiring) datamodels
+const espData = require("./models/espData"); //importing (requiring) datamodels
 const path = require("path");
 const ejsMate = require("ejs-mate");
+const fetch = require("node-fetch");
+app.use(express.json());// for esp32 data receiving
 require("dotenv").config();
 
 app.listen(port, () => {
@@ -16,16 +19,14 @@ app.set("views", path.join(__dirname, "views"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/testdata1";
-main()
+mongoose.connect(process.env.MONGO_URL)
   .then(() => {
-    console.log("connected to DB");
+    console.log("Connected to MongoDB Atlas Cluster");
   })
-  .catch((err) => console.log(err));
+  .catch(err => {
+    console.log("MongoDB connection error:", err);
+  });
 
-async function main() {
-  await mongoose.connect(MONGO_URL);
-}
 
 app.get("/", (req, res) => {
   res.redirect("/main");
@@ -100,3 +101,32 @@ app.get("/api/solar", async (req, res) => {
 app.get("/panel", (req, res) => {
   res.render("routes/panel");
 });
+
+// ESP32 DATA INGESTION API
+app.post("/api/esp32/data", async (req, res) => {
+  const sensorData = new espData(req.body);
+  await sensorData.save();
+  res.status(201).json({ message: "Data stored successfully" });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

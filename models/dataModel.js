@@ -48,5 +48,6 @@ const dataSchema = new mongoose.Schema({
   },
 });
 
-const dataModel = mongoose.model("dataModel", dataSchema);
-module.exports = dataModel;
+const dataModel = mongoose.connection.useDb("TejasArk_post_data");
+
+module.exports = dataModel.model("dataModel", dataSchema);
