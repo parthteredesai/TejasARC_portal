@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const port = 8080;
-const dataModel = require("./models/dataModel.js"); //importing (requiring) datamodels
+const port = process.env.PORT || 8080;
+const AIDataCollection = require("./models/dataModel.js"); //importing (requiring) datamodels
 const espData = require("./models/espData"); //importing (requiring) datamodels
 const path = require("path");
 const ejsMate = require("ejs-mate");
@@ -58,7 +58,7 @@ app.get("/main", (req, res) => {
 
 app.get("/dashboard", async (req, res) => {
   // Fetch MongoDB data
-  const allData = await dataModel.find({});
+  const allData = await AIDataCollection.find({});
 
   // Weather API setup
   const CITY = "Mumbai"; // change city as needed
@@ -92,9 +92,20 @@ app.get("/dashboard", async (req, res) => {
   res.render("routes/dashboard", { allData, weather });
 });
 
+// app.get("/dashboard", async (req, res) => {
+//   // Fetch MongoDB data
+//   const allData = await AIDataCollection.find({});
+
+//   // 🚨 TEMPORARY DEBUG LINE 🚨
+//   console.log("Documents fetched:", allData.length); 
+//   // If this logs '0', the issue is still model/connection/DB access related.
+
+//   // ... rest of your code ...
+//   res.render("routes/dashboard", { allData, weather });
+// });
 
 app.get("/api/solar", async (req, res) => {
-    const data = await dataModel.find().sort({ timestamp: -1 });
+    const data = await AIDataCollection.find().sort({ timestamp: -1 });
     res.json(data);
 });
 
@@ -108,25 +119,4 @@ app.post("/api/esp32/data", async (req, res) => {
   await sensorData.save();
   res.status(201).json({ message: "Data stored successfully" });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

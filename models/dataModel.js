@@ -48,6 +48,13 @@ const dataSchema = new mongoose.Schema({
   },
 });
 
-const dataModel = mongoose.connection.useDb("TejasArk_post_data");
+const postDataDb = mongoose.connection.useDb("TejasArk_post_data"); 
 
-module.exports = dataModel.model("dataModel", dataSchema);
+// 2. Create the model using the custom connection object
+const AIDataCollectionModel = postDataDb.model(
+  "AIDataCollection", // Mongoose model name
+  dataSchema,
+  "aiDatacollection" // Collection name in the DB
+);
+
+module.exports = AIDataCollectionModel;
