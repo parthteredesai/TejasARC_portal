@@ -1,6 +1,17 @@
 body {
   font-family: "Source Sans 3" !important;
-  background-color: #f8f9fb !important;
+  /* background-color: #f8f9fb !important; */
+}
+
+.hero-section {
+  background-color: red !important; /* Temporarily use red */
+  background-image: url('TejasArk.png') !important;
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  width: 100%;
+  display: block;
+  /* margin-top: 10rem; */
 }
 .navbar {
   height: 4rem;
