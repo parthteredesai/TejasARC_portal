@@ -56,95 +56,95 @@ app.get("/main", (req, res) => {
   res.render("routes/main");
 });
 
-// app.get("/dashboard", async (req, res) => {
-//   // Fetch MongoDB data
-//   const allData = await AIDataCollection.find({});
-
-//   // Weather API setup
-//   const CITY = "Mumbai"; // change city as needed
-//   const API_KEY = process.env.OPENWEATHER_API_KEY;
-
-//   // Use your exact URL format
-//   const url = `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=metric`;
-
-//   // Fetch weather
-//   const response = await fetch(url);
-//   const weatherData = await response.json();
-
-//   // Prepare weather object
-//   const weather = response.ok
-//     ? {
-//         city: weatherData.name,
-//         city_lon:weatherData.coord.lon,
-//         city_lat:weatherData.coord.lat,
-//         visibility:weatherData.visibility,
-//         temp: weatherData.main.temp,
-//         sealvl: weatherData.main.sea_level,
-//         gndlvl: weatherData.main.grnd_level,
-//         humidity: weatherData.main.humidity,
-//         pressure: weatherData.main.pressure,
-//         wind: weatherData.wind.speed,
-//         condition: weatherData.weather[0].main,
-//       }
-//     : null;
-
-//   // Render EJS with MongoDB + weather data
-//   res.render("routes/dashboard", { allData, weather });
-// });
-
 app.get("/dashboard", async (req, res) => {
-    // 1. Fetch MongoDB data
-    const allData = await AIDataCollection.find({});
-    
-    // 2. Weather API setup
-    const CITY = "Mumbai"; 
-    const API_KEY = process.env.OPENWEATHER_API_KEY;
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=metric`;
+  // Fetch MongoDB data
+  const allData = await AIDataCollection.find({});
 
-    let weather = null; // Initialize weather as null to handle errors gracefully
+  // Weather API setup
+  const CITY = "Mumbai"; // change city as needed
+  const API_KEY = process.env.OPENWEATHER_API_KEY;
 
-    try {
-        const response = await fetch(url);
-        const weatherData = await response.json();
+  // Use your exact URL format
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=metric`;
 
-        if (response.ok && weatherData.main && weatherData.weather && weatherData.coord) {
-            
-            // CONSTRUCT THE WEATHER OBJECT SAFELY:
-            weather = {
-                // Core fields
-                city: weatherData.name,
-                temp: weatherData.main.temp,
-                humidity: weatherData.main.humidity,
-                pressure: weatherData.main.pressure,
-                wind: weatherData.wind.speed,
-                condition: weatherData.weather[0].main,
-                
-                // Fields that might be optional, using Nullish Coalescing (??)
-                city_lon: weatherData.coord.lon,
-                city_lat: weatherData.coord.lat,
-                visibility: weatherData.visibility,
-                
-                // These are the two MOST LIKELY culprits if data is intermittently missing.
-                sealvl: weatherData.main.sea_level ?? 'N/A', 
-                gndlvl: weatherData.main.grnd_level ?? 'N/A',
-            };
+  // Fetch weather
+  const response = await fetch(url);
+  const weatherData = await response.json();
 
-            // 🚨 DEBUG: Log the constructed weather object to the console
-            console.log("Weather Data Constructed Successfully:", weather);
+  // Prepare weather object
+  const weather = response.ok
+    ? {
+        city: weatherData.name,
+        city_lon:weatherData.coord.lon,
+        city_lat:weatherData.coord.lat,
+        visibility:weatherData.visibility,
+        temp: weatherData.main.temp,
+        sealvl: weatherData.main.sea_level,
+        gndlvl: weatherData.main.grnd_level,
+        humidity: weatherData.main.humidity,
+        pressure: weatherData.main.pressure,
+        wind: weatherData.wind.speed,
+        condition: weatherData.weather[0].main,
+      }
+    : null;
 
-        } else {
-            console.error("OpenWeather API Error/Invalid Response Data:", weatherData);
-            // weather remains null, triggering the EJS 'else' block.
-        }
-    } catch (error) {
-        // This catches network errors or JSON parsing failures
-        console.error("CRITICAL ERROR: Failed to fetch weather data or parse JSON.", error);
-        // weather remains null, triggering the EJS 'else' block.
-    }
-
-    // 3. Render EJS with MongoDB + weather data
-    res.render("routes/dashboard", { allData, weather });
+  // Render EJS with MongoDB + weather data
+  res.render("routes/dashboard", { allData, weather });
 });
+
+// app.get("/dashboard", async (req, res) => {
+//     // 1. Fetch MongoDB data
+//     const allData = await AIDataCollection.find({});
+    
+//     // 2. Weather API setup
+//     const CITY = "Mumbai"; 
+//     const API_KEY = process.env.OPENWEATHER_API_KEY;
+//     const url = `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=metric`;
+
+//     let weather = null; // Initialize weather as null to handle errors gracefully
+
+//     try {
+//         const response = await fetch(url);
+//         const weatherData = await response.json();
+
+//         if (response.ok && weatherData.main && weatherData.weather && weatherData.coord) {
+            
+//             // CONSTRUCT THE WEATHER OBJECT SAFELY:
+//             weather = {
+//                 // Core fields
+//                 city: weatherData.name,
+//                 temp: weatherData.main.temp,
+//                 humidity: weatherData.main.humidity,
+//                 pressure: weatherData.main.pressure,
+//                 wind: weatherData.wind.speed,
+//                 condition: weatherData.weather[0].main,
+                
+//                 // Fields that might be optional, using Nullish Coalescing (??)
+//                 city_lon: weatherData.coord.lon,
+//                 city_lat: weatherData.coord.lat,
+//                 visibility: weatherData.visibility,
+                
+//                 // These are the two MOST LIKELY culprits if data is intermittently missing.
+//                 sealvl: weatherData.main.sea_level ?? 'N/A', 
+//                 gndlvl: weatherData.main.grnd_level ?? 'N/A',
+//             };
+
+//             // 🚨 DEBUG: Log the constructed weather object to the console
+//             console.log("Weather Data Constructed Successfully:", weather);
+
+//         } else {
+//             console.error("OpenWeather API Error/Invalid Response Data:", weatherData);
+//             // weather remains null, triggering the EJS 'else' block.
+//         }
+//     } catch (error) {
+//         // This catches network errors or JSON parsing failures
+//         console.error("CRITICAL ERROR: Failed to fetch weather data or parse JSON.", error);
+//         // weather remains null, triggering the EJS 'else' block.
+//     }
+
+//     // 3. Render EJS with MongoDB + weather data
+//     res.render("routes/dashboard", { allData, weather });
+// });
 
 // app.get("/dashboard", async (req, res) => {
 //   // Fetch MongoDB data
