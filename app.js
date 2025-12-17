@@ -32,26 +32,6 @@ app.get("/", (req, res) => {
   res.redirect("/main");
 });
 
-// sample data insertion
-// app.get("/add", async (req, res) => {
-//   const sample = new dataModel({
-//     timestamp: new Date(),
-//     panel_id: "PANEL-1",
-//     voltage: 12.3,
-//     current: 1.2,
-//     irradiance: 450,
-//     panel_temp: 25,
-//     ambient_temp: 22,
-//     dust: 0.12,
-//     pressure: 1012,
-//     humidity: 55,
-//     source: "test",
-//   });
-
-//   await sample.save();
-//   res.send("Sample data added");
-// });
-
 app.get("/main", (req, res) => {
   res.render("routes/main");
 });
@@ -92,71 +72,6 @@ app.get("/dashboard", async (req, res) => {
   res.render("routes/dashboard", { allData, weather });
 });
 
-// app.get("/dashboard", async (req, res) => {
-//     // 1. Fetch MongoDB data
-//     const allData = await AIDataCollection.find({});
-    
-//     // 2. Weather API setup
-//     const CITY = "Mumbai"; 
-//     const API_KEY = process.env.OPENWEATHER_API_KEY;
-//     const url = `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=metric`;
-
-//     let weather = null; // Initialize weather as null to handle errors gracefully
-
-//     try {
-//         const response = await fetch(url);
-//         const weatherData = await response.json();
-
-//         if (response.ok && weatherData.main && weatherData.weather && weatherData.coord) {
-            
-//             // CONSTRUCT THE WEATHER OBJECT SAFELY:
-//             weather = {
-//                 // Core fields
-//                 city: weatherData.name,
-//                 temp: weatherData.main.temp,
-//                 humidity: weatherData.main.humidity,
-//                 pressure: weatherData.main.pressure,
-//                 wind: weatherData.wind.speed,
-//                 condition: weatherData.weather[0].main,
-                
-//                 // Fields that might be optional, using Nullish Coalescing (??)
-//                 city_lon: weatherData.coord.lon,
-//                 city_lat: weatherData.coord.lat,
-//                 visibility: weatherData.visibility,
-                
-//                 // These are the two MOST LIKELY culprits if data is intermittently missing.
-//                 sealvl: weatherData.main.sea_level ?? 'N/A', 
-//                 gndlvl: weatherData.main.grnd_level ?? 'N/A',
-//             };
-
-//             // 🚨 DEBUG: Log the constructed weather object to the console
-//             console.log("Weather Data Constructed Successfully:", weather);
-
-//         } else {
-//             console.error("OpenWeather API Error/Invalid Response Data:", weatherData);
-//             // weather remains null, triggering the EJS 'else' block.
-//         }
-//     } catch (error) {
-//         // This catches network errors or JSON parsing failures
-//         console.error("CRITICAL ERROR: Failed to fetch weather data or parse JSON.", error);
-//         // weather remains null, triggering the EJS 'else' block.
-//     }
-
-//     // 3. Render EJS with MongoDB + weather data
-//     res.render("routes/dashboard", { allData, weather });
-// });
-
-// app.get("/dashboard", async (req, res) => {
-//   // Fetch MongoDB data
-//   const allData = await AIDataCollection.find({});
-
-//   // 🚨 TEMPORARY DEBUG LINE 🚨
-//   console.log("Documents fetched:", allData.length); 
-//   // If this logs '0', the issue is still model/connection/DB access related.
-
-//   // ... rest of your code ...
-//   res.render("routes/dashboard", { allData, weather });
-// });
 
 app.get("/api/solar", async (req, res) => {
     const data = await AIDataCollection.find().sort({ timestamp: -1 });

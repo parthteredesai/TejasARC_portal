@@ -3,6 +3,46 @@ body {
   /* background-color: #f8f9fb !important; */
 }
 
+.navbar {
+  height: 4rem;
+  background-color: #0081a7 !important;
+}
+
+.footer {
+  /* height: 13rem;  <-- Optional: Using min-height is safer for mobile */
+  height: 13rem; 
+  width: 100%;
+  border: 1px solid black;
+  background-color: #1c4d96;
+  color: #0b0d53;
+
+  /* FLEXBOX MAGIC */
+  display: flex;
+  flex-direction: column;   /* Stacks the links on top of the copyright */
+  justify-content: space-between;  
+  align-items: center;      /* Centers content horizontally */
+  text-align: center;       /* Ensures text inside tags is centered */
+  padding: 20px;            /* Adds breathing room for mobile */
+}
+
+/* Remove the fixed margins completely */
+.copyright, .footerlinks1 {
+  margin-left: 0; 
+  margin-top: 0;
+  /* margin-bottom: 1rem;  */
+}
+
+.footerlinks1 a {
+  font-size: 20px;
+  text-decoration: none;
+  color: #0b0d53;
+  padding: 0 5px; /* Adds space around the links */
+}
+
+.footerlinks1 a:hover {
+  text-decoration: underline;
+}
+
 .hero-section {
   background-image: url('TejasArk.png') !important;
   background-size: cover;
@@ -10,11 +50,6 @@ body {
   height: 600px;
   width: 100%;
   display: block;
-}
-
-.navbar {
-  height: 4rem;
-  background-color: #0081a7 !important;
 }
 
 .logo {
