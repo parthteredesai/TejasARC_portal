@@ -240,8 +240,9 @@
               <% } %>  
             </div>
             <div class="weather12">
-                <p> <%= weather.condition %> </p>
+                
               <% if (weather) { %>
+                <p> <%= weather.condition %> </p>
                 <div class="weather-item"> <i class="fa-solid fa-eye"></i> Visibility : <%= weather.visibility %></div>
                 <div class="weather-item"> <i class="fa-solid fa-temperature-half"></i> Temperature: <%= weather.temp %>&#8451 </div>
                 <div class="weather-item"> <i class="fa-solid fa-smog"></i> Humidity : <%= weather.humidity %>% </div>
