@@ -30,10 +30,11 @@ body {
   font-size: 22px;
   color: #ffffff !important;
   margin-left: 1.2rem;
-  margin-top: 0.4rem;
+  margin-top: 0.2rem;
   position: relative; /* Required for the absolute positioning of the underline */
   display: inline-block;
-  padding-bottom: 2px;
+  padding-bottom: 6px;
+  font-weight: 500;
 }
 
 /* The underline element */
@@ -243,6 +244,80 @@ body {
   font-weight: 600;
 }
 
+.mainsec2{
+  height: 600px;
+  width: 100%;
+  /* 1. Add space on all 4 sides */
+  padding: 1rem; 
+  box-sizing: border-box;
+  border: 1px solid #0d0000;
+}
+
+.process{
+  min-height: 560px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #0d0000;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+.process1{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.process1 h1{
+  font-weight: 800;
+  font-size: 50px;
+  /* padding-left: 24rem; */
+}
+
+.process2{
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* 1. Make all cards the same height and layout */
+.workcard {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensures if they are in a row, they stretch equally */
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  border: 1px solid #323030;
+}
+
+/* 2. Fix the image height and prevent stretching */
+.workcard .card-img-top {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  /* Optional: if you want the gap to be outside the card body */
+  margin-bottom: 0.5rem; 
+}
+
+/* 3. Ensure the card body expands to push buttons to the bottom */
+.workcard .card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-top: 1.5rem; /* This creates the space below the image */
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+/* 4. Optional: Push the button to the bottom if text lengths differ */
+.workcard .btn {
+  margin-top: auto; 
+  align-self: start;
+}
 
 /* --- Global & Panel Wrapper Styling --- */
 
