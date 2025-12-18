@@ -1,20 +1,12 @@
 body {
   font-family: "Source Sans 3" !important;
-  /* background-color: #f8f9fb !important; */
+  background-color: #ffffff !important;
 }
 
+/* --- Existing Styles --- */
 .navbar {
   height: 4rem;
   background-color: #1e96fc !important;
-  /* background: linear-gradient(to right, #0271d2, #afd3f3); */
-}
-
-.collapse a{
-  text-decoration: none;
-  font-size: 22px;
-  color: #ffffff !important;
-  margin-left: 1.2rem;
-  margin-top: 0.4rem;
 }
 
 .logo {
@@ -30,6 +22,64 @@ body {
   letter-spacing: 0.02em !important;
   font-family: "Play", sans-serif;
   color: #ffffff !important;
+}
+
+/* --- Improved Link Styling & Underline Animation --- */
+.collapse .nav-link {
+  text-decoration: none;
+  font-size: 22px;
+  color: #ffffff !important;
+  margin-left: 1.2rem;
+  margin-top: 0.4rem;
+  position: relative; /* Required for the absolute positioning of the underline */
+  display: inline-block;
+  padding-bottom: 2px;
+}
+
+/* The underline element */
+.collapse .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transition: width 0.3s ease-in-out; /* The "left-to-right" effect */
+}
+
+/* Animate underline on hover */
+.collapse .nav-link:hover::after {
+  width: 100%;
+}
+
+/* --- Mobile Collapse Styling --- */
+/* This kicks in when the hamburger menu is expanded */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: #1e96fc; /* Same as navbar for seamless look */
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+
+  /* Adjust margins for mobile links */
+  .collapse .nav-link {
+    margin-left: 0; 
+    margin-bottom: 0.5rem;
+    display: table; /* Keeps the underline from stretching the full width of the screen */
+  }
+}
+
+/* Styling the Hamburger Toggle Icon */
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1); /* Makes the black icon white */
 }
 
 .footer {
@@ -77,14 +127,121 @@ body {
 }
 
 .hero-section {
-  background-size: cover;
-  background-position: center;
-  height: 600px;
+  height: 500px;
   width: 100%;
-  display: block;
+  /* 1. Add space on all 4 sides */
+  padding: 1rem; 
+  box-sizing: border-box;
 }
 
+.carousel, 
+.carousel-inner, 
+.carousel-item {
+  height: 100%; /* Occupies the remaining space inside the padding */
+  border-radius: 20px; /* 2. Rounds the corners of the container */
+  overflow: hidden;    /* Ensures the image doesn't "leak" past the rounded corners */
+}
 
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* 'cover' usually looks better with rounded corners than 'fill' */
+  border-radius: 20px; /* 3. Rounds the corners of the image */
+}
+
+/* Center the caption container */
+.carousel-caption {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex !important; /* Force flex display */
+  flex-direction: column !important;   /* Stack H5 and P vertically */
+  justify-content: center !important;  /* Center vertically */
+  align-items: center !important;      /* Center horizontally */
+  padding-bottom: 0;        /* Remove Bootstrap default padding */
+  padding-top: 8rem !important;
+  font-family: 'Play', Times, serif;
+  font-weight: 400;
+}
+
+/* Optional: Add a text shadow or dark background to make text pop */
+.carousel-caption h5 {
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  font-size: 100px;
+}
+.carousel-caption i {
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  font-size: 100px;
+}
+
+.carousel-caption p {
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.button {
+  line-height: 1;
+  text-decoration: none;
+  display: inline-flex;
+  border: 5px solid #ffff;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #364958;
+  color: #fff;
+  border-radius: 10rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  padding-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.3s;
+}
+
+.button__icon-wrapper {
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  color: var(--clr);
+  background-color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.button:hover {
+  background-color: #000;
+}
+
+.button:hover .button__icon-wrapper {
+  color: #000;
+}
+
+.button__icon-svg--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+
+.button:hover .button__icon-svg:first-child {
+  transition: transform 0.3s ease-in-out;
+  transform: translate(150%, -150%);
+}
+
+.button:hover .button__icon-svg--copy {
+  transition: transform 0.3s ease-in-out 0.1s;
+  transform: translate(0);
+}
+
+.thirdcarousaltext{
+  color: #0b0d53;
+  font-weight: 600;
+}
 
 
 /* --- Global & Panel Wrapper Styling --- */
