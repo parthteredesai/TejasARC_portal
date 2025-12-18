@@ -105,4 +105,37 @@
       </div>
     </div>
   </div>
+
+  <% 
+  if (
+    alertData &&
+    alertData.root_cause_analysis &&
+    alertData.root_cause_analysis.major_factor !== "None"
+  ) { 
+%>
+  <div id="alertModal" class="modal-overlay">
+    <div class="modal-box">
+      <h3>⚠️ System Alert</h3>
+
+      <h2><%= alertData.root_cause_analysis.major_factor %></h2>
+
+      <button id="closeModal">Close</button>
+    </div>
+  </div>
+<% } %>
+
+  <script>
+  const closeBtn = document.getElementById("closeModal");
+  const modal = document.getElementById("alertModal");
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  }
+</script>
+
+
+
+
 </body>

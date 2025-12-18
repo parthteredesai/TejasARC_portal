@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const port = process.env.PORT || 8080;
 const AIDataCollection = require("./models/dataModel.js"); //importing (requiring) datamodels
-const espData = require("./models/espData"); //importing (requiring) datamodels
+const espData = require("./models/espData.js"); //importing (requiring) datamodels
 const path = require("path");
 const ejsMate = require("ejs-mate");
 const fetch = require("node-fetch");
@@ -32,8 +32,11 @@ app.get("/", (req, res) => {
   res.redirect("/main");
 });
 
-app.get("/main", (req, res) => {
-  res.render("routes/main");
+app.get("/main", async (req, res) => {
+   const alertData = await AIDataCollection.findOne().sort({ _id: -1 });
+
+  //  console.log(alertData);
+  res.render("routes/main", {alertData});
 });
 
 app.get("/dashboard", async (req, res) => {
