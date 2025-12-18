@@ -87,7 +87,7 @@ body {
   /* height: 13rem;  <-- Optional: Using min-height is safer for mobile */
   height: 13rem; 
   width: 100%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   background-color: #c4c5c6;
   color: #0b0d53;
 
@@ -250,18 +250,19 @@ body {
   /* 1. Add space on all 4 sides */
   padding: 1rem; 
   box-sizing: border-box;
-  border: 1px solid #0d0000;
+  /* border: 1px solid #0d0000; */
 }
 
 .process{
   min-height: 560px;
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid #0d0000;
+  border: 0.5px solid #ca6702;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   padding-top: 1rem;
+  background-color: #fefae0;
 }
 
 .process1{
@@ -269,17 +270,30 @@ body {
   flex-direction: row;
   justify-content: center;
 }
-.process1 h1{
+
+.process1 h1 {
+  font-family: "Play", sans-serif;
+  font-size: 60px;
   font-weight: 800;
-  font-size: 50px;
-  /* padding-left: 24rem; */
+  
+  /* --- Minimalist Gradient --- */
+  background: linear-gradient(to right, #4361ee, #f72585);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* --- Clean Refinements --- */
+  margin: 0;
+  letter-spacing: -0.02em; /* Slight tightening for a premium feel */
+  display: inline-block;
 }
 
 .process2{
   padding-top: 3rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  
 }
 
 /* 1. Make all cards the same height and layout */
@@ -291,6 +305,18 @@ body {
   overflow: hidden;
   margin-bottom: 2rem;
   border: 1px solid #323030;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.workcard:hover {
+  /* Slightly lifts the card for a better feel */
+  transform: translateY(-5px);
+
+  /* Shadow 1: Blue (#4361ee) pushed to the right and bottom */
+  /* Shadow 2: Pink (#f72585) pushed further to create a blend */
+  box-shadow: 
+    8px 8px 15px rgba(67, 97, 238, 0.3), 
+    16px 16px 25px rgba(247, 37, 133, 0.2);
 }
 
 /* 2. Fix the image height and prevent stretching */
@@ -299,7 +325,7 @@ body {
   width: 100%;
   object-fit: cover;
   /* Optional: if you want the gap to be outside the card body */
-  margin-bottom: 0.5rem; 
+  /* margin-bottom: 0.5rem;  */
 }
 
 /* 3. Ensure the card body expands to push buttons to the bottom */
@@ -307,10 +333,11 @@ body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  padding-top: 1.5rem; /* This creates the space below the image */
+  padding-top: 1.5rem; 
   padding-left: 1.25rem;
   padding-right: 1.25rem;
   padding-bottom: 1.25rem;
+  background-color: #fff;
 }
 
 /* 4. Optional: Push the button to the bottom if text lengths differ */
