@@ -126,13 +126,14 @@
 
   <script>
   const closeBtn = document.getElementById("closeModal");
-  const modal = document.getElementById("alertModal");
+const modal = document.getElementById("alertModal");
 
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
-  }
+if (closeBtn && modal) {
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+}
+
 </script>
 
 
