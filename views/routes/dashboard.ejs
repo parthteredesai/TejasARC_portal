@@ -4,8 +4,21 @@
     <div class="sec1">
 
       <div class="sub-sec1x">
-        hello
-      </div>
+        <h3>Last Updated  </h3>
+  <% 
+    // 1. Get the last item safely
+    const lastEntry = allData[allData.length - 1]; 
+    
+    // 2. Convert to string (handling potential Date objects)
+    const rawTimestamp = lastEntry.timestamp.toISOString ? lastEntry.timestamp.toISOString() : String(lastEntry.timestamp);
+
+    // 3. Now split will work
+    const [date, fullTime] = rawTimestamp.split('T');
+    const time = fullTime.replace('Z', '');
+  %>
+  <h5>Date : <%= date %> </h5>
+  <h5>Time : <%= time %></h5>
+</div>
 
       <div class="sub-sec1">
         <h4 class="efficiencytext"> Efficiency Tracker</h4>
@@ -263,9 +276,10 @@
       </div>
 
       <div class="sub-sec2-3">
-        
-        <!-- <div class="sub-sec2-3x1">
-          <h4><i class="fa-solid fa-circle-info"></i> Additional latest Sensor Data</h4>
+
+        <div class="sub-sec2-3cover">
+          <h2> <i class="fa-solid fa-database"></i> Sensor Data :</h2>
+        <div class="sub-sec2-3x1">
           <div class="sensorDatalist">
              <ul>
               <li> Panel Temperature : <%= allData[allData.length - 1].sensors.temperature %></li>
@@ -279,8 +293,9 @@
               <li> Efficiency drop : <%= allData[allData.length - 1].ai_output.efficiency_drop %></li>
              </ul>
           </div>
-        </div> -->
-        <!-- <div class="sub-sec2-3x2">
+        </div>
+        </div>
+        <div class="sub-sec2-3x2">
           <h2> <i class="fa-solid fa-triangle-exclamation"></i> Alerts & Forecast :</h2>
           <% 
           const majorFactor = allData[allData.length - 1].root_cause_analysis.major_factor; 
@@ -291,22 +306,22 @@
           %>
           <div class="alert1">
             <ul>
-              <li> Major Factor : <%= majorFactor %> </li>
+              <li><b> Major Factor :</b> <%= majorFactor %> </li>
               <% if (contributingFactors && contributingFactors.length > 0) { %>
-                 <li> Contributing Factors : <%= contributingFactors.join(', ') %> </li>
+                 <li> <b>Contributing Factors :</b> <%= contributingFactors.join(', ') %> </li>
               <% } else { %> 
-                 <li> Contributing Factors : None </li>
+                 <li><b> Contributing Factors :</b> None </li>
               <% } %>
-              <li> Recommendations : <%= recommondations %> </li>
+              <li><b> Recommendations :</b> <%= recommondations %> </li>
             </ul>
           </div>
           <div class="alert2">
             <ul>
-              <li> Next 24 Hrs prediction : <%= next_24_hrs %> </li>
-              <li> Week Trends : <%= week_trends %> </li>
+              <li><b> Next 24 Hrs prediction :</b> <%= next_24_hrs %> </li>
+              <li><b> Week Trends :</b> <%= week_trends %> </li>
             </ul>
           </div>
-        </div> -->
+        </div>
       </div>
 
       <div class="sub-sec2-2">
@@ -314,7 +329,7 @@
         <div class="sub-sec2-2x"> 
           <!-- /////////////  Bus Voltage Graph code logic   ////////////// -->
            <div class="busVoltagetitle">
-             <h4> Bus Voltage Chart (Last 20 Records)</h4>
+             <p> <i class="fa-solid fa-chart-line"></i> Bus Voltage Chart (Last 20 Records)</p>
           </div> 
 
           <div class="busVoltageChart">
@@ -363,7 +378,7 @@
          <div class="sub-sec2-2x2">
 
           <div class="shuntVoltagetitle">
-            <h4> Shunt Voltage Chart (Last 20 Records)</h4>
+            <p><i class="fa-solid fa-chart-column"></i> Shunt Voltage Chart (Last 20 Records)<p>
           </div>
 
           <div class="shuntVoltageChart">
@@ -412,6 +427,21 @@
          </div>
          
       </div>
+      <div class="graphbtndiv">
+        <div class="one">
+      <form method="GET" action="/graphs">
+      <button class="cssbuttons-io">
+  <span
+    ><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="none"></path>
+      <i class="fa-solid fa-chart-column"></i>
+    </svg>
+      &ensp;See More Graphs</span
+  >
+</button>
+    </form>
+    </div>
+    </div>
     </div>
   </div>
 </body>

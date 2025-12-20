@@ -85,7 +85,7 @@ body {
 
 .footer {
   /* height: 13rem;  <-- Optional: Using min-height is safer for mobile */
-  height: 13rem; 
+  min-height: 13rem; 
   width: 100%;
   /* border: 1px solid black; */
   background-color: #c4c5c6;

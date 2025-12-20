@@ -38,7 +38,7 @@
 }
 
 .sub-sec1x{
-  height: 6rem;
+  height: 8rem;
   width: 14rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -46,6 +46,17 @@
   margin-top: 0.5rem;
   border: 1px solid black;
   border-radius: 15px;
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+.sub-sec1x {
+  font-family: "Space Grotesk";
+  color: #0d3b66;
+}
+.sub-sec1x h3{
+  font-weight: 800;
+  color: #0d3b66;
 }
 
 .sub-sec1 {
@@ -85,6 +96,7 @@
   margin-top: 0.5rem !important;
   margin-left: 0.3rem;
   font-weight: 600;
+  color: #0d3b66;
 }
 
 .efficiency-value {
@@ -131,11 +143,10 @@
 .healthtext{
   font-size: 1.3rem;
   font-family: "Space Grotesk", sans-serif;
-  /* margin-top: 0.5rem !important; */
   margin-left: 0.3rem;
   font-weight: 600;
-  /* padding-left: 0.8rem; */
   text-align: center;
+  color: #0d3b66 ;
 }
 
 .health-value {
@@ -256,7 +267,7 @@
   border: 1px solid black;
   display: flex;
   flex-direction: column;
-  justify-content: space-;
+  justify-content: space-evenly;
 }
 
 /* -----------sec2-subsec1------------- */
@@ -461,8 +472,12 @@
 .busVoltagetitle{
   width: 29rem;
   height: 2rem;
-  padding-left: 1.5rem;
+  padding-left: 1rem;
   padding-top: 0.5rem;
+  font-family: "Space Grotesk";
+  color: #0d3b66;
+  font-size: 23px;
+  font-weight: 500;
 }
 
 .busVoltageChart{
@@ -486,6 +501,10 @@
   height: 2rem;
   padding-left: 1rem;
   padding-top: 0.5rem;
+  font-family: "Space Grotesk";
+  color: hsl(209, 77%, 23%);
+  font-size: 21px;
+  font-weight: 500;
 }
 
 .shuntVoltageChart{
@@ -516,37 +535,47 @@
   justify-content: space-around;
 }
 
-/* .sub-sec2-3x1{
+.sub-sec2-3cover{
+  width: 26rem;
+   min-height: 17.3rem;
+    margin: 0.3rem; 
+    border-radius: 7px; 
+    border: 1px solid black;
+}
+
+.sub-sec2-3cover h2 {
+   font-family: "Space Grotesk";
+   padding-top: 1rem;
+   padding-left: 1rem;
+   color: #0d3b66;
+}
+
+.sub-sec2-3x1{
    width: 25rem;
-   height: 17.3rem;
+   min-height: 16rem;
+   padding-top: 1rem;
     margin: 0.3rem; 
     border-radius: 15px;
     border: 1px solid black;
-    background-color: #ffe5ec;
-    border: 5px solid #da627d; 
+    background-color: #d8f4fa;
+    border: 5px solid #2a89ef; 
 
-} */
-/* .sub-sec2-3x1 h4{
-  padding-top: 0.5rem;
-  padding-left: 0.3rem;
-  font-family: "Space Grotesk";
-  color: #ff1f48;
-   ;
 }
+
 .sub-sec2-3x1 ul{
     list-style-type: none;
 }
 .sensorDatalist{
   padding-left: 1.5rem;
   font-family: "Montserrat";
-  color: #ff4d6d;
+  color: #1780f0;
   font-weight: 600;
   
 }
 
 .sub-sec2-3x2{
    width: 26rem;
-   height: 17.3rem;
+   min-height: 17.3rem;
     margin: 0.3rem; 
     border-radius: 7px; 
     border: 1px solid black;
@@ -555,12 +584,16 @@
    font-family: "Space Grotesk";
    padding-top: 1rem;
    padding-left: 1rem;
+   color: #0d3b66;
+}
+.sub-sec2-3x2 i {
+   color: #ff0043;
 }
 
 .alert1{
   width: 25.3rem;
-  height: 6rem;
-  border-radius: 20px; 
+  min-height: 6rem;
+  border-radius: 17px; 
   background-color: #ffe5ec;
   border: 5px solid #ff0000;
   border-left: 15px solid #ff0000;
@@ -598,5 +631,70 @@
   padding-bottom: 0.15rem;
    font-family: "Montserrat";
    font-weight: 500;
-} */
+}
+
+.graphbtndiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;    /* Vertically centers the content */
+  justify-content: center; /* Horizontally centers the content */
+  width: 100%;            /* Ensures the div takes up the full width */
+  margin-bottom: 1rem;
+}
+
+.cssbuttons-io {
+  position: relative;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  border-radius: 0.8em;
+  cursor: pointer;
+  border: none;
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  color: ghostwhite;
+  overflow: hidden;
+}
+
+.cssbuttons-io svg {
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 0.5em;
+}
+
+.cssbuttons-io span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8em 1.2em 0.8em 0em;
+}
+
+.cssbuttons-io::before,
+.cssbuttons-io::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.cssbuttons-io::before {
+  content: "";
+  background: #003e51;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.cssbuttons-io:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+
+.cssbuttons-io:active {
+  transform: scale(0.95);
+}
 
