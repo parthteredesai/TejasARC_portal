@@ -74,7 +74,7 @@
        </div>
     </div>
     <div class="sec2">
-      <p class="dashIntro">Welcome to Dashboard&#128202</p>
+      <p class="dashIntro">Welcome to Dashboard <i class="fa-solid fa-chart-simple"></i></p>
       <div class="sub-sec2-1">
         <div class="sub-sec2-1x1 power">
           <% 
@@ -400,17 +400,20 @@
             const sh_voltage = recent.map(d => d.sensors.shunt_voltage);
 
             new Chart(document.getElementById("shuntVoltageChart"), {
-                type: 'line',
+                type: 'bar',
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: "Shunt Voltage (V)",
-                        data: sh_voltage,
-                        borderWidth: 2,
-                        borderColor: "#0f5ff4",
-                        backgroundColor: "rgba(15, 95, 244,0.25)",
-                        tension: 0.3,
-                        fill: true
+                         label: "Shunt Voltage (V)",
+                         data: sh_voltage,
+
+                         backgroundColor: "rgba(15, 95, 244, 0.6)",
+                         borderColor: "#0f5ff4",
+                         borderWidth: 1,
+
+                         borderRadius: 6,     // rounded bars
+                         barPercentage: 0.7,  // bar width
+                         categoryPercentage: 0.8
 
                     }]
                 },

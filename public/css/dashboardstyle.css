@@ -3,9 +3,12 @@
 /* -------------- dashboard intro text ------------------ */
 
 .dashIntro {
-  color: #2c3e50;
-  font-size: 2rem;
-  font-weight: 500;
+  background: linear-gradient(to right, #2c3e50, #6294ac,#add9ef);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+  font-weight: 600;
   letter-spacing: 0.1em;
  
   font-family: "lilex", sans-serif; 
@@ -19,6 +22,7 @@
 .dashContainer {
   display: flex;
   flex-direction: row;
+  margin-bottom: 1rem;
 }
 
 /* ----------------------- sec1 dashboard-------------------------*/
@@ -29,12 +33,14 @@
   margin-left: 0.8rem;
   margin-top: 0.5rem;
   border-radius: 15px;
-  border: 1px solid black;
-  background-color: white;
+  /* border: 1px solid black; */
+
   display: flex;
   flex-direction: column;
   /* justify-content: space-between; */
   flex-wrap: wrap;
+    /* background-color: #E3E3E3 ; */
+    background-color: #0a9396;
 }
 
 .sub-sec1x{
@@ -44,10 +50,18 @@
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
-  border: 1px solid black;
+  border: 5px solid #ffff;
   border-radius: 15px;
   padding-left: 1rem;
   padding-top: 1rem;
+  /* background-color: #fdfeff; */
+  background-color: #caffbf;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.sub-sec1x:hover {
+  /* 2. Lighter Shadow: Reduced the blur and lowered opacity to 0.15 */
+  box-shadow: 8px 8px 15px rgba(233, 232, 232, 0.468);
 }
 
 .sub-sec1x {
@@ -66,8 +80,9 @@
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
-  border: 1px solid black;
+  border: 5px solid #ffff;
   border-radius: 30px;
+  background-color: #caffbf;
   
   
   position: relative; 
@@ -76,6 +91,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.sub-sec1:hover {
+  /* 2. Lighter Shadow: Reduced the blur and lowered opacity to 0.15 */
+  box-shadow: 8px 8px 15px rgba(233, 232, 232, 0.468);
 }
 
 /* --- 2. Efficiency Chart Styling --- */
@@ -264,7 +285,7 @@
   margin-top: 0.5rem;
   margin-right: 0.8rem;
   border-radius: 7px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -275,7 +296,8 @@
   margin: 0.5rem;
   min-height: 15.5rem; 
   border-radius: 7px;
-  border: 1px solid black;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #a1b5d8;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -303,11 +325,12 @@
     height: 14.5rem;
     margin: 0.3rem; 
     border-radius: 30px;
-    border: 1px solid black; 
+    border: 4px solid #9d4edd; 
     
     
     display: flex;           
     flex-direction: row; 
+    background-color: #fff1e6;
 }
 
 .powerGeneratedtitle{
@@ -315,11 +338,13 @@
   font-weight: 600;
   padding-left: 1.5rem;
   padding-top: 1.5rem;
+  color: #006a4e;
 }
 
 .powerGeneratedvalue{
   padding-left: 3rem;
   padding-top: 1rem;
+  color: #006a4e;
 }
 /* -------------chip design------------------- */
 .main-container {
@@ -416,6 +441,7 @@
   font-size: 1.5rem;
   margin-bottom: 0.7rem;
   font-weight: 600;
+  color: #7b2cbf;
 }
 
 .weather-title {
@@ -423,6 +449,7 @@
   font-family: "Space Grotesk";
   font-weight: 600;
   padding-left: 0.5rem;
+  color: #7b2cbf;
 }
 
 .weather-item{
@@ -434,7 +461,7 @@
 
 .weather-item i {
    font-size: 18px;
-   color: #0081a7;
+   color: #9d4edd;
 }
 
 /* -----------sec2-subsec2------------- */
@@ -443,7 +470,7 @@
   margin: 0.5rem;
   min-height: 19rem;
   border-radius: 7px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -528,11 +555,13 @@
 .sub-sec2-3 {
   margin: 0.5rem;
   min-height: 20rem;
-  border-radius: 7px;
-  border: 1px solid black;
+  border-radius: 25px;
+  border: 4px solid #55828b;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  background-color: #eff6e0 ;
+  padding-bottom: 1rem;
 }
 
 .sub-sec2-3cover{
@@ -540,7 +569,7 @@
    min-height: 17.3rem;
     margin: 0.3rem; 
     border-radius: 7px; 
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .sub-sec2-3cover h2 {
@@ -578,7 +607,7 @@
    min-height: 17.3rem;
     margin: 0.3rem; 
     border-radius: 7px; 
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 .sub-sec2-3x2 h2 {
    font-family: "Space Grotesk";
