@@ -1,0 +1,26 @@
+.notif{
+    background-color: #a8dadc;
+    border: 3px solid #005f73;
+    border-radius: 15px;
+    margin: 1rem;
+    padding: 0.5rem;
+    width: 50rem;
+}
+
+.notif h5{
+    padding-left: 2rem;
+} 
+
+.notif ul{
+    list-style-type: none;
+}
+
+.notifcover{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.notif-time{
+    padding-left: 2rem;
+}

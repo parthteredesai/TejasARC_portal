@@ -275,55 +275,6 @@
         </div>
       </div>
 
-      <div class="sub-sec2-3">
-
-        <div class="sub-sec2-3cover">
-          <h2> <i class="fa-solid fa-database"></i> Sensor Data :</h2>
-        <div class="sub-sec2-3x1">
-          <div class="sensorDatalist">
-             <ul>
-              <li> Panel Temperature : <%= allData[allData.length - 1].sensors.temperature %></li>
-              <li> Altitude : <%= allData[allData.length - 1].sensors.altitude %></li>
-              <li> Current : <%= allData[allData.length - 1].sensors.current %></li>
-              <li> Power : <%= allData[allData.length - 1].sensors.power %></li>
-              <li> Light intensity : <%= allData[allData.length - 1].sensors.light_intensity %></li>
-              <li> Dust density : <%= allData[allData.length - 1].sensors.dust_density %></li>
-              <li> Tilt angle : <%= allData[allData.length - 1].sensors.tilt_angle %></li>
-              <li> Ideal power : <%= allData[allData.length - 1].ai_output.ideal_power %></li>
-              <li> Efficiency drop : <%= allData[allData.length - 1].ai_output.efficiency_drop %></li>
-             </ul>
-          </div>
-        </div>
-        </div>
-        <div class="sub-sec2-3x2">
-          <h2> <i class="fa-solid fa-triangle-exclamation"></i> Alerts & Forecast :</h2>
-          <% 
-          const majorFactor = allData[allData.length - 1].root_cause_analysis.major_factor; 
-          const contributingFactors = allData[allData.length - 1].root_cause_analysis.contributing_factors; 
-          const recommondations = allData[allData.length - 1].root_cause_analysis.recommendation; 
-          const next_24_hrs = allData[allData.length - 1].forecast.next_24_hours; 
-          const week_trends = allData[allData.length - 1].forecast.week_trend; 
-          %>
-          <div class="alert1">
-            <ul>
-              <li><b> Major Factor :</b> <%= majorFactor %> </li>
-              <% if (contributingFactors && contributingFactors.length > 0) { %>
-                 <li> <b>Contributing Factors :</b> <%= contributingFactors.join(', ') %> </li>
-              <% } else { %> 
-                 <li><b> Contributing Factors :</b> None </li>
-              <% } %>
-              <li><b> Recommendations :</b> <%= recommondations %> </li>
-            </ul>
-          </div>
-          <div class="alert2">
-            <ul>
-              <li><b> Next 24 Hrs prediction :</b> <%= next_24_hrs %> </li>
-              <li><b> Week Trends :</b> <%= week_trends %> </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
       <div class="sub-sec2-2">
         
         <div class="sub-sec2-2x"> 
@@ -445,6 +396,57 @@
     </form>
     </div>
     </div>
+
+
+
+      <div class="sub-sec2-3">
+
+        <div class="sub-sec2-3cover">
+          <h2> <i class="fa-solid fa-database"></i> Sensor Data :</h2>
+        <div class="sub-sec2-3x1">
+          <div class="sensorDatalist">
+             <ul>
+              <li> Panel Temperature : <%= allData[allData.length - 1].sensors.temperature %></li>
+              <li> Altitude : <%= allData[allData.length - 1].sensors.altitude %></li>
+              <li> Current : <%= allData[allData.length - 1].sensors.current %></li>
+              <li> Power : <%= allData[allData.length - 1].sensors.power %></li>
+              <li> Light intensity : <%= allData[allData.length - 1].sensors.light_intensity %></li>
+              <li> Dust density : <%= allData[allData.length - 1].sensors.dust_density %></li>
+              <li> Tilt angle : <%= allData[allData.length - 1].sensors.tilt_angle %></li>
+              <li> Ideal power : <%= allData[allData.length - 1].ai_output.ideal_power %></li>
+              <li> Efficiency drop : <%= allData[allData.length - 1].ai_output.efficiency_drop %></li>
+             </ul>
+          </div>
+        </div>
+        </div>
+        <div class="sub-sec2-3x2">
+          <h2> <i class="fa-solid fa-triangle-exclamation"></i> Alerts & Forecast :</h2>
+          <% 
+          const majorFactor = allData[allData.length - 1].root_cause_analysis.major_factor; 
+          const contributingFactors = allData[allData.length - 1].root_cause_analysis.contributing_factors; 
+          const recommondations = allData[allData.length - 1].root_cause_analysis.recommendation; 
+          const next_24_hrs = allData[allData.length - 1].forecast.next_24_hours; 
+          const week_trends = allData[allData.length - 1].forecast.week_trend; 
+          %>
+          <div class="alert1">
+            <ul>
+              <li><b> Major Factor :</b> <%= majorFactor %> </li>
+              <% if (contributingFactors && contributingFactors.length > 0) { %>
+                 <li> <b>Contributing Factors :</b> <%= contributingFactors.join(', ') %> </li>
+              <% } else { %> 
+                 <li><b> Contributing Factors :</b> None </li>
+              <% } %>
+              <li><b> Recommendations :</b> <%= recommondations %> </li>
+            </ul>
+          </div>
+          <div class="alert2">
+            <ul>
+              <li><b> Next 24 Hrs prediction :</b> <%= next_24_hrs %> </li>
+              <li><b> Week Trends :</b> <%= week_trends %> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </body>

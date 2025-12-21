@@ -1,0 +1,35 @@
+<% layout("/layouts/boilerplate") %>
+
+<% allData.forEach((data, index) => { 
+     const dateObj = new Date(data.timestamp);
+     const date = dateObj.toLocaleDateString("en-IN", {
+       day: "2-digit",
+       month: "short",
+       year: "numeric"
+     });
+     const time = dateObj.toLocaleTimeString("en-IN", {
+       hour: "2-digit",
+       minute: "2-digit",
+       hour12: true
+     });
+%>
+<div class="notifcover">
+  <div class="notif">
+    <h5>Dataset Id <%= data._id %></h5>
+    <ul>
+      <li>
+        <strong>Major Factor:</strong>
+        <%= data.root_cause_analysis.major_factor %>
+      </li>
+      <li>
+        <strong>Recommendation:</strong>
+        <%= data.root_cause_analysis.recommendation %>
+      </li>
+    </ul>
+    <h6 class="notif-time">
+       <%= date %>
+       <%= time %>
+    </h6>
+  </div>
+</div>
+<% }) %>

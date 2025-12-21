@@ -85,6 +85,12 @@ app.get("/panel", (req, res) => {
   res.render("routes/panel");
 });
 
+app.get("/notifications", async (req, res) => {
+  const allData = await AIDataCollection.find().sort({ timestamp: -1 });
+
+  res.render("routes/notifications",  {allData});
+});
+
 // ESP32 DATA INGESTION API
 app.post("/api/esp32/data", async (req, res) => {
   const sensorData = new espData(req.body);
