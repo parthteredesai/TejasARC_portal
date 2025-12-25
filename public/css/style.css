@@ -5,11 +5,15 @@ body {
 html, body {
   overflow-x: hidden;
 }
+.mainContainer{
+  margin-top: 4rem;
+}
 
 /* --- Existing Styles --- */
 .navbar {
   height: 4rem;
   background-color: #1e96fc !important;
+  position: fixed !important;
 }
 .navbar {
   width: 100%;
