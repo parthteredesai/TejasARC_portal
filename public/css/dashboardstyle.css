@@ -735,3 +735,215 @@
   transform: scale(0.95);
 }
 
+@media (max-width: 480px) {
+
+  /* Overall layout */
+  .dashContainer {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  /* Sidebar section */
+  .sec1 {
+    width: 100%;
+    min-height: auto;
+    margin: 0.5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sub-sec1x,
+  .sub-sec1 {
+    width: 90%;
+    height: auto;
+  }
+
+  .sub-sec1 {
+    padding: 1rem 0;
+  }
+
+  /* Efficiency & health circles */
+  .efficiency-container,
+  .health-container {
+    width: 9rem;
+    height: 9rem;
+  }
+
+  /* Main content section */
+  .sec2 {
+    margin: 0.5rem;
+  }
+
+  .dashIntro {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  /* Power + chip + weather */
+  .sub-sec2-1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sub-sec2-1x1,
+  .sub-sec2-1x2 {
+    width: 95%;
+    height: auto;
+  }
+
+  .weather11,
+  .weather12 {
+    width: 100%;
+    padding-left: 1rem;
+  }
+
+  /* Charts */
+  .sub-sec2-2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sub-sec2-2x,
+  .sub-sec2-2x2,
+  .sub-sec2-2x3 {
+    width: 95%;
+    height: 16rem;
+  }
+
+  .busVoltageChart,
+  .shuntVoltageChart {
+    width: 100%;
+    height: 13rem;
+  }
+
+  /* Sensor + alerts */
+  .sub-sec2-3 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sub-sec2-3cover,
+  .sub-sec2-3x2 {
+    width: 95%;
+  }
+
+  .sub-sec2-3x1 {
+    width: 100%;
+  }
+
+  /* Button */
+  .cssbuttons-io {
+    font-size: 16px;
+  }
+
+   .alert1,
+  .alert2 {
+    width: 95%;              /* Full width on mobile */
+    min-height: auto;        /* Let content decide height */
+    margin: 0.5rem auto;     /* Center align */
+    border-radius: 14px;
+
+    border-width: 3px;       /* Thinner border */
+    border-left-width: 10px; /* Keep alert emphasis */
+  }
+
+  .alert1 {
+    background-color: #ffe5ec;
+    border-color: #ff0000;
+    color: #c70000;
+  }
+
+  .alert2 {
+    background-color: #d0f4de;
+    border-color: #38b000;
+    color: #277b00;
+  }
+
+  .alert1 ul,
+  .alert2 ul {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .alert1 li,
+  .alert2 li {
+    font-size: 0.9rem;       /* Smaller text */
+    line-height: 1.4;
+    padding-bottom: 0.3rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+  .dashContainer {
+    flex-direction: column;
+  }
+
+  .sec1 {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sub-sec1x,
+  .sub-sec1 {
+    width: 45%;
+  }
+
+  .sec2 {
+    margin: 0.5rem;
+  }
+
+  .sub-sec2-1 {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sub-sec2-1x1,
+  .sub-sec2-1x2 {
+    width: 45%;
+  }
+
+  .sub-sec2-2 {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sub-sec2-2x,
+  .sub-sec2-2x2 {
+    width: 45%;
+  }
+
+  .sub-sec2-3 {
+    flex-direction: column;
+  }
+
+  .sub-sec2-3cover,
+  .sub-sec2-3x2 {
+    width: 95%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .sec1 {
+    width: 17rem;
+  }
+
+  .sub-sec2-1x2 {
+    width: 22rem;
+  }
+
+  .sub-sec2-2x,
+  .sub-sec2-2x2 {
+    width: 20rem;
+  }
+
+  .sub-sec2-3cover,
+  .sub-sec2-3x2 {
+    width: 24rem;
+  }
+}
+
