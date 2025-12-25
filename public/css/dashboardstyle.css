@@ -750,31 +750,83 @@
     padding: 0;
   }
 
-  /* Sidebar */
+  /* Sidebar container */
   .sec1 {
+    min-height: auto;        /* 🔥 remove 100vh */
+    height: auto;
     width: 100%;
-    min-height: auto;
     margin: 0;
-    flex-direction: row;
+    padding: 0.4rem 0;
+    border-radius: 0px;
+    align-items: stretch; /* 🔥 forces equal height children */
+
+    flex-direction: row;     /* horizontal packing */
     flex-wrap: wrap;
     justify-content: center;
+  
   }
 
-  .sub-sec1x,
-  .sub-sec1 {
-    width: 100%;
+  /* Top info card */
+  .sub-sec1x {
+    width: 95%;
     height: auto;
+    margin: 0.25rem 0;
+    padding: 0.6rem;
+    border-width: 3px;
+    border-radius: 12px;
   }
 
+  /* Tracker card */
   .sub-sec1 {
-    padding: 0.6rem 0;
+    width: 45%;
+    height: auto;
+    margin: 0.25rem;
+    border-width: 3px;
+    border-radius: 16px;
+    padding: 0.4rem 0;
   }
 
-  /* Efficiency & health circles */
+  /* Efficiency + health trackers */
   .efficiency-container,
   .health-container {
-    width: 7.5rem;
-    height: 7.5rem;
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .efficiency-value,
+  .health-value {
+    font-size: 1.1rem;
+  }
+
+  .efficiencytext,
+  .healthtext {
+    font-size: 1rem;
+    margin: 0.3rem 0 0;
+    padding-top: 0;
+    text-align: center;
+  }
+
+  /* Progress ring thickness adjustment */
+  .progress-circle,
+  .progress-circle-health {
+    mask: radial-gradient(transparent 40px, white 40px);
+    -webkit-mask: radial-gradient(transparent 40px, white 40px);
+  }
+
+  /* Solar panel card */
+  .solar-panel-container {
+    padding: 6px;
+    gap: 3px;
+    border-radius: 12px;
+  }
+
+  .solar-cell-unit {
+    border-radius: 3px;
+  }
+
+  /* Status overlay text */
+  .status {
+    font-size: 0.8rem;
   }
 
   /* Main section */
