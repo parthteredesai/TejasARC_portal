@@ -2,11 +2,18 @@ body {
   font-family: "Source Sans 3" !important;
   background-color: #ffffff !important;
 }
+html, body {
+  overflow-x: hidden;
+}
 
 /* --- Existing Styles --- */
 .navbar {
   height: 4rem;
   background-color: #1e96fc !important;
+}
+.navbar {
+  width: 100%;
+  max-width: 100%;
 }
 
 .logo {
