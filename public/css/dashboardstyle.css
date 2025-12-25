@@ -794,6 +794,7 @@
   .sub-sec2-1 {
     flex-direction: column;
     align-items: center;
+    margin-left: 0;
   }
 
   .sub-sec2-1x1,
@@ -813,6 +814,7 @@
   .sub-sec2-2 {
     flex-direction: column;
     align-items: center;
+    margin-left: 0;
   }
 
   .sub-sec2-2x,
@@ -885,6 +887,9 @@
     font-size: 0.85rem;
     line-height: 1.35;
     padding-bottom: 0.25rem;
+  }
+  .sensorDatalist{
+    padding-left: 0;
   }
 }
 
