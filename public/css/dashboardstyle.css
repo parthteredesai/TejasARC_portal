@@ -735,7 +735,7 @@
   transform: scale(0.95);
 }
 
-@media (max-width: 385px) {
+@media (max-width: 450px) {
 
   /* Reset spacing */
   body {
@@ -756,6 +756,7 @@
     height: auto;
     width: 100%;
     margin: 0;
+    margin-top: 0.1rem;
     padding: 0.4rem 0;
     border-radius: 0px;
     align-items: stretch; /* 🔥 forces equal height children */
@@ -946,7 +947,7 @@
 }
 
 
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 450px) and (max-width: 768px) {
 
   .dashContainer {
     flex-direction: column;
