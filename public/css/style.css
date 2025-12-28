@@ -65,25 +65,7 @@ html, body {
   width: 100%;
 }
 
-/* --- Mobile Collapse Styling --- */
-/* This kicks in when the hamburger menu is expanded */
-@media (max-width: 991px) {
-  .navbar-collapse {
-    background-color: #1e96fc; /* Same as navbar for seamless look */
-    padding: 1rem;
-    border-radius: 8px;
-    margin-top: 0.5rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    z-index: 1000;
-  }
 
-  /* Adjust margins for mobile links */
-  .collapse .nav-link {
-    margin-left: 0; 
-    margin-bottom: 0.5rem;
-    display: table; /* Keeps the underline from stretching the full width of the screen */
-  }
-}
 
 /* Styling the Hamburger Toggle Icon */
 .navbar-toggler {
@@ -106,8 +88,8 @@ html, body {
   display: flex;
   flex-direction: column;   /* Stacks the links on top of the copyright */
   justify-content: space-between;  
-  align-items: center;      /* Centers content horizontally */
-  text-align: center;       /* Ensures text inside tags is centered */
+  align-items: center;      
+  text-align: center;       
   padding: 20px;            /* Adds breathing room for mobile */
 }
 
@@ -476,4 +458,136 @@ html, body {
 }
 
 /* --- Global & Panel Wrapper Styling End --- */
+
+/* --- Mobile Collapse Styling --- */
+/* This kicks in when the hamburger menu is expanded */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: #1e96fc; /* Same as navbar for seamless look */
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+
+  /* Adjust margins for mobile links */
+  .collapse .nav-link {
+    margin-left: 0; 
+    margin-bottom: 0.5rem;
+    display: table; /* Keeps the underline from stretching the full width of the screen */
+  }
+}
+
+/* ===============================
+   MOBILE RESPONSIVE (≤ 450px)
+   =============================== */
+@media (max-width: 450px) {
+
+  /* ---------- HERO SECTION ---------- */
+  .hero-section {
+    height: auto;
+    padding: 0.5rem;
+  }
+
+  .carousel,
+  .carousel-inner,
+  .carousel-item {
+    height: 320px;
+    border-radius: 15px;
+  }
+
+  .carousel-item img {
+    border-radius: 15px;
+  }
+
+  /* ---------- CAROUSEL TEXT ---------- */
+  .carousel-caption {
+    padding-top: 4rem !important;
+    
+  }
+
+  .carousel-caption.d-none {
+    display: flex !important;
+  }
+  .carousel-caption h5,
+  .carousel-caption i {
+    font-size: 42px;
+    text-align: center;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  /* ---------- BUTTON ---------- */
+  .button {
+    padding: 0.6rem 1.2rem;
+    font-size: 14px;
+    border-width: 3px;
+  }
+
+  .button__icon-wrapper {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* ---------- MAIN PROCESS SECTION ---------- */
+  .mainsec2 {
+    height: auto;
+    padding: 0.5rem;
+  }
+
+  .process {
+    padding: 1rem;
+  }
+
+  .process1 h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  /* ---------- WORKFLOW CARDS ---------- */
+  .process2 {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .workcard {
+    width: 100% !important;
+    max-width: 320px;
+  }
+
+  .workcard .card-img-top {
+    height: 160px;
+  }
+
+  .workcard .card-body {
+    padding: 1rem;
+  }
+
+  .workcard .card-title {
+    font-size: 18px;
+  }
+
+  .workcard .card-text {
+    font-size: 14px;
+  }
+
+  /* ---------- MODAL ---------- */
+  .modal-box {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .modal-box h2 {
+    font-size: 20px;
+  }
+
+  .modal-box h4 {
+    font-size: 16px;
+  }
+}
 

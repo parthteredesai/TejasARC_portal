@@ -33,14 +33,14 @@
   margin-left: 0.8rem;
   margin-top: 0.5rem;
   border-radius: 15px;
-  /* border: 1px solid black; */
+  /* border: 0px solid #6c757d; */
 
   display: flex;
   flex-direction: column;
   /* justify-content: space-between; */
   flex-wrap: wrap;
     /* background-color: #E3E3E3 ; */
-    background-color: #0a9396;
+    background-color: #dee2e6;
 }
 
 .sub-sec1x{
@@ -50,27 +50,29 @@
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
-  border: 5px solid #ffff;
+  /* border: 1.5px solid #adb5bd; */
+  border-bottom: 4px solid #adb5bd;
+  /* border-right: 5px solid #adb5bd; */
   border-radius: 15px;
   padding-left: 1rem;
   padding-top: 1rem;
   /* background-color: #fdfeff; */
-  background-color: #caffbf;
+  background-color: #ffffff;
   transition: box-shadow 0.3s ease-in-out;
 }
 
 .sub-sec1x:hover {
   /* 2. Lighter Shadow: Reduced the blur and lowered opacity to 0.15 */
-  box-shadow: 8px 8px 15px rgba(233, 232, 232, 0.468);
+  box-shadow: 6px 6px 10px #c0c0c0;
 }
 
 .sub-sec1x {
-  font-family: "Space Grotesk";
-  color: #0d3b66;
+  font-family: "DM Sans";
+  color: #415a77;
 }
 .sub-sec1x h3{
   font-weight: 800;
-  color: #0d3b66;
+  color: #274c77;
 }
 
 .sub-sec1 {
@@ -80,9 +82,12 @@
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
-  border: 5px solid #ffff;
+  /* border: 1.5px solid #00a7e1; */
+  border-bottom: 4px solid #adb5bd;
+  /* border-right: 5px solid #adb5bd; */
   border-radius: 30px;
-  background-color: #caffbf;
+  background-color: #ffffff;
+  font-family: "DM Sans";
   
   
   position: relative; 
@@ -96,7 +101,7 @@
 
 .sub-sec1:hover {
   /* 2. Lighter Shadow: Reduced the blur and lowered opacity to 0.15 */
-  box-shadow: 8px 8px 15px rgba(233, 232, 232, 0.468);
+  box-shadow: 6px 6px 10px #c0c0c0;
 }
 
 /* --- 2. Efficiency Chart Styling --- */
@@ -113,11 +118,11 @@
 .efficiencytext{
   font-size: 1.5rem;
   padding-top: 2rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "DM Sans", sans-serif;
   margin-top: 0.5rem !important;
   margin-left: 0.3rem;
   font-weight: 600;
-  color: #0d3b66;
+  color: #274c77;
 }
 
 .efficiency-value {
@@ -163,11 +168,11 @@
 
 .healthtext{
   font-size: 1.3rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "DM Sans", sans-serif;
   margin-left: 0.3rem;
   font-weight: 600;
   text-align: center;
-  color: #0d3b66 ;
+  color: #274c77 ;
 }
 
 .health-value {
@@ -179,7 +184,7 @@
     
     font-size: 1.5em; 
     font-weight: 700; 
-    color: #2c3e50;
+    color: #274c77;
     z-index: 2; 
 }
 
@@ -297,7 +302,7 @@
   min-height: 15.5rem; 
   border-radius: 7px;
   padding-bottom: 1rem;
-  border-bottom: 3px solid #a1b5d8;
+  border-bottom: 4px solid #a1b5d8;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -305,15 +310,16 @@
 
 .sub-sec2-1x1 { 
     width: 16rem; 
-    height: 14.5rem;
+    min-height: 14.5rem;
     margin: 0.3rem; 
     border-radius: 30px;
-    border: 1px solid rgb(74, 73, 73); 
+    /* border: 1px solid rgb(74, 73, 73);  */
 }
 
 .power{
-  background-color: #dbfe87;
-  border: 5px solid #006a4e;
+  background-color: #ffffff;
+  border: 2.5px solid #00b4d8;
+  border-bottom: 10px solid #00b4d8;
 }
 
 .chip{
@@ -322,29 +328,31 @@
 }
 .sub-sec2-1x2 { 
     width: 26rem; 
-    height: 14.5rem;
+    min-height: 14.5rem;
     margin: 0.3rem; 
     border-radius: 30px;
-    border: 4px solid #9d4edd; 
+    /* border: 2.5px solid #023e8a;  */
     
     
     display: flex;           
     flex-direction: row; 
-    background-color: #fff1e6;
+    /* background-color: #219ebc; */
+    background: linear-gradient(to right, #004181, #2ba9e4,#66b9e2);
 }
 
 .powerGeneratedtitle{
-  font-family: "Space Grotesk";
-  font-weight: 400;
+  font-family: "DM Sans";
+  font-weight: 500;
   padding-left: 1.5rem;
   padding-top: 1.5rem;
-  color: #006a4e;
+  color: #004e98;
 }
 
 .powerGeneratedvalue{
-  padding-left: 3rem;
+  padding-left: 1.5rem;
   padding-top: 1rem;
-  color: #006a4e;
+  color: #004e98;
+  font-weight: 400;
 }
 /* -------------chip design------------------- */
 .main-container {
@@ -441,27 +449,27 @@
   font-size: 1.5rem;
   margin-bottom: 0.7rem;
   font-weight: 600;
-  color: #7b2cbf;
+  color: #ffffff;
 }
 
 .weather-title {
   font-size: 1.5rem;
-  font-family: "Space Grotesk";
+  font-family: "DM Sans";
   font-weight: 600;
   padding-left: 0.5rem;
-  color: #7b2cbf;
+  color: #ffffff;
 }
 
 .weather-item{
-  font-family: "Montserrat";
+  font-family: "DM Sans";
   padding-bottom: 0.3rem;
   font-weight: 500;
-
+  color: #ffffff;
 }
 
 .weather-item i {
    font-size: 18px;
-   color: #9d4edd;
+   color: #ffffff;
 }
 
 /* -----------sec2-subsec2------------- */
@@ -470,7 +478,8 @@
   margin: 0.5rem;
   min-height: 19rem;
   border-radius: 7px;
-  /* border: 1px solid black; */
+  padding-bottom: 1.5rem;
+  border-bottom: 4px solid #a1b5d8;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -481,16 +490,18 @@
     width: 21rem;
     height: 18rem;
     margin: 0.5rem; 
-    border-radius: 7px; 
-    border: 1px solid black; 
+    border-radius: 20px; 
+    border: 2.5px solid #00a7e1;
+    border-bottom: 12px solid #00a7e1; 
 }
 
 .sub-sec2-2x2{
    width: 21rem;
    height: 18rem;
     margin: 0.5rem; 
-    border-radius: 7px; 
-    border: 1px solid black; 
+    border-radius: 20px; 
+    border: 2.5px solid #4fd9b0;
+    border-bottom: 12px solid #4fd9b0;
 
 }
 
@@ -498,8 +509,9 @@
     width: 15rem;
     height: 18rem;
     margin: 0.5rem; 
-    border-radius: 7px; 
-    border: 1px solid black; 
+    border-radius: 20px; 
+    border: 2.5px solid #8050ed;
+    border-bottom: 12px solid #8050ed;
 }
 
 /* busVoltageChart sizing using two different divs to divide sub-sec2-2x */
@@ -507,12 +519,12 @@
 .efficiencytitle{
   width: 21rem;
   height: 2rem;
-  padding-left: 1rem;
+  padding-left: 2.5rem;
   padding-top: 0.5rem;
-  font-family: "Space Grotesk";
+  font-family: "DM Sans";
   color: #0d3b66;
-  font-size: 19px;
-  font-weight: 500;
+  font-size: 25px;
+  font-weight: 450;
 }
 
 .efficiencyChart{
@@ -536,10 +548,10 @@
   height: 2rem;
   padding-left: 1rem;
   padding-top: 0.5rem;
-  font-family: "Space Grotesk";
+  font-family: "DM Sans";
   color: hsl(209, 77%, 23%);
-  font-size: 19px;
-  font-weight: 500;
+  font-size: 25px;
+  font-weight: 450;
 }
 
 .predictionChart{
@@ -564,11 +576,11 @@
   margin: 0.5rem;
   min-height: 20rem;
   border-radius: 25px;
-  border: 4px solid #55828b;
+  /* border: 0.4px solid #a1b5d8; */
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: #eff6e0 ;
+  background-color: #ffffff ;
   padding-bottom: 1rem;
 }
 
@@ -581,7 +593,7 @@
 }
 
 .sub-sec2-3cover h2 {
-   font-family: "Space Grotesk";
+   font-family: "DM Sans";
    padding-top: 1rem;
    padding-left: 1rem;
    color: #0d3b66;
@@ -593,9 +605,9 @@
    padding-top: 1rem;
     margin: 0.3rem; 
     border-radius: 15px;
-    border: 1px solid black;
     background-color: #d8f4fa;
-    border: 5px solid #2a89ef; 
+    border: 1px solid #2a89ef; 
+    border-left: 8px solid #2a89ef; 
 
 }
 
@@ -604,7 +616,7 @@
 }
 .sensorDatalist{
   padding-left: 1.5rem;
-  font-family: "Montserrat";
+  font-family: "DM Sans";
   color: #1780f0;
   font-weight: 600;
   
@@ -618,7 +630,7 @@
     /* border: 1px solid black; */
 }
 .sub-sec2-3x2 h2 {
-   font-family: "Space Grotesk";
+   font-family: "DM Sans";
    padding-top: 1rem;
    padding-left: 1rem;
    color: #0d3b66;
@@ -630,10 +642,10 @@
 .alert1{
   width: 25.3rem;
   min-height: 6rem;
-  border-radius: 17px; 
+  border-radius: 10px; 
   background-color: #ffe5ec;
-  border: 5px solid #ff0000;
-  border-left: 15px solid #ff0000;
+  border: 1px solid #ff0000;
+  border-left: 8px solid #ff0000;
   margin: 0.3rem;
   color: #ff0000;
 }
@@ -645,16 +657,16 @@
 
 .alert1 li{
   padding-bottom: 0.15rem;
-   font-family: "Montserrat";
+   font-family: "DM Sans";
    font-weight: 500;
 }
 .alert2{
   width: 25.3rem;
   height: 6rem;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: #d0f4de;
-  border: 5px solid #38b000;
-  border-left: 15px solid #38b000;
+  border: 1px solid #38b000;
+  border-left: 8px solid #38b000;
   margin: 0.3rem;
   color: #277b00;
 }
@@ -666,7 +678,7 @@
 
 .alert2 li{
   padding-bottom: 0.15rem;
-   font-family: "Montserrat";
+   font-family: "DM Sans";
    font-weight: 500;
 }
 

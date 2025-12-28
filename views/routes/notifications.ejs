@@ -1,7 +1,7 @@
 <% layout("/layouts/boilerplate") %>
 
 <% allData.forEach((data, index) => { 
-     const dateObj = new Date(data.timestamp);
+     const dateObj = new Date(data.insight.timestamp);
      const date = dateObj.toLocaleDateString("en-IN", {
        day: "2-digit",
        month: "short",
@@ -19,11 +19,15 @@
     <ul>
       <li>
         <strong>Major Factor:</strong>
-        <%= data.root_cause_analysis.major_factor %>
+        <%= data.insight.live_diagnosis.root_cause %>
       </li>
       <li>
         <strong>Recommendation:</strong>
-        <%= data.root_cause_analysis.recommendation %>
+        <%= data.insight.weather_benchmark.recommendation %>
+      </li>
+      <li>
+        <strong>Action:</strong>
+        <%= data.insight.live_diagnosis.action %>
       </li>
     </ul>
     <h6 class="notif-time">

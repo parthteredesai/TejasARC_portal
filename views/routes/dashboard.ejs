@@ -80,7 +80,7 @@
           const powerGenerated = allData[allData.length - 1].insight.live_diagnosis.actual_power; 
           const powerGeneratedPred = allData[allData.length - 1].insight.live_diagnosis.predicted_power; 
           %>
-          <h6 class="powerGeneratedtitle">Power Generation By Solar Panel: </h6>
+          <h4 class="powerGeneratedtitle">Power Generation By Solar Panel: </h4>
           <h4 class="powerGeneratedvalue">Actual :<%= powerGenerated %> KW</h4>
           <h4 class="powerGeneratedvalue">Predicted :<%= powerGeneratedPred %> KW</h4>
             
@@ -426,8 +426,8 @@ loadForecastEfficiency();
           <h2> <i class="fa-solid fa-triangle-exclamation"></i> Alerts & Forecast :</h2>
           <% 
           const rootcause = allData[allData.length - 1].insight.live_diagnosis.root_cause; 
-          const contributingFactors = allData[allData.length - 1].insight.weather_benchmark.recommondation; 
-          const recommondations = allData[allData.length - 1].insight.weather_benchmark.recommondation; 
+          const contributingFactors = allData[allData.length - 1].insight.weather_benchmark.recommendation; 
+          const recommendations = allData[allData.length - 1].insight.weather_benchmark.recommendation; 
           const visibility_km = allData[allData.length - 1].insight.weather_benchmark.weather_snapshot.visibility_km; 
           const clouds = allData[allData.length - 1].insight.weather_benchmark.weather_snapshot.clouds;
           const wind_cooling_factor = allData[allData.length - 1].insight.weather_benchmark.weather_snapshot.wind_cooling_factor;
@@ -436,11 +436,11 @@ loadForecastEfficiency();
             <ul>
               <li><b> Root Cause :</b> <%= rootcause %> </li>
               <% if (contributingFactors && contributingFactors.length > 0) { %>
-                 <li> <b>Contributing Factors :</b> <%= contributingFactors.join(', ') %> </li>
+                 <li> <b>Contributing Factors :</b> <%= contributingFactors %> </li>
               <% } else { %> 
                  <li><b> Contributing Factors :</b> None </li>
               <% } %>
-              <li><b> Recommendations :</b> <%= recommondations %> </li>
+              <li><b> Recommendations :</b> <%= recommendations %> </li>
             </ul>
           </div>
           <div class="alert2">

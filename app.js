@@ -77,7 +77,7 @@ app.get("/dashboard", async (req, res) => {
 
 
 app.get("/api/solar", async (req, res) => {
-    const data = await AIDataCollection.find();
+    const data = await AIDataCollection.find().sort({ "insight.timestamp": -1 });
     res.json(data);
 });
 
@@ -86,7 +86,7 @@ app.get("/panel", (req, res) => {
 });
 
 app.get("/notifications", async (req, res) => {
-  const allData = await AIDataCollection.find().sort({ timestamp: -1 });
+  const allData = await AIDataCollection.find().sort({ "insight.timestamp": -1 });
 
   res.render("routes/notifications",  {allData});
 });

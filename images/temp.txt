@@ -1,0 +1,188 @@
+        <div class="sub-sec2-2x"> 
+          <!-- /////////////  Bus Voltage Graph code logic   ////////////// -->
+           <div class="busVoltagetitle">
+             <p> <i class="fa-solid fa-chart-line"></i> Bus Voltage Chart (Last 20 Records)</p>
+          </div> 
+
+          <div class="busVoltageChart">
+            <canvas id="busVoltageChart"></canvas>
+          </div>
+
+          <script>
+            async function loadSolarData() {
+            const res = await fetch("/api/solar"); 
+            const data = await res.json();
+
+            const N = 20;
+            const recent = data.slice(-N).reverse();
+
+            const labels = recent.map(d => 
+                new Date(d.insignt.timestamp).toLocaleTimeString()
+            );
+
+            const voltage = recent.map(d => d.sensors.bus_voltage);
+
+            new Chart(document.getElementById("busVoltageChart"), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: "Bus Voltage (V)",
+                        data: voltage,
+                        borderWidth: 2,
+                        borderColor: "#0d4e87",
+                        backgroundColor: "rgba(30,136,229,0.15)",
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                        responsive: true,
+                        maintainAspectRatio: false 
+                }
+            });
+        }
+
+        loadSolarData();
+        </script>
+        </div>
+        <!-- ////////////////////////////////////////////////////////// -->
+         <div class="sub-sec2-2x2">
+
+          <div class="shuntVoltagetitle">
+            <p><i class="fa-solid fa-chart-column"></i> Shunt Voltage Chart (Last 20 Records)<p>
+          </div>
+
+          <div class="shuntVoltageChart">
+            <canvas id="shuntVoltageChart"></canvas>
+          </div>
+          
+          <script>
+            async function loadSolarData2() {
+            const res = await fetch("/api/solar"); 
+            const data = await res.json();
+
+            const N = 20;
+            const recent = data.slice(-N).reverse();
+
+            const labels = recent.map(d => 
+                new Date(d.timestamp).toLocaleTimeString()
+            );
+
+            const sh_voltage = recent.map(d => d.sensors.shunt_voltage);
+
+            new Chart(document.getElementById("shuntVoltageChart"), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                         label: "Shunt Voltage (V)",
+                         data: sh_voltage,
+
+                         backgroundColor: "rgba(15, 95, 244, 0.6)",
+                         borderColor: "#0f5ff4",
+                         borderWidth: 1,
+
+                         borderRadius: 6,     // rounded bars
+                         barPercentage: 0.7,  // bar width
+                         categoryPercentage: 0.8
+
+                    }]
+                },
+                options: {
+                        responsive: true,
+                        maintainAspectRatio: false 
+                        
+                }
+            });
+        }
+
+        loadSolarData2();
+        </script>
+         </div>
+
+         /* busVoltageChart sizing using two different divs to divide sub-sec2-2x */
+
+.busVoltagetitle{
+  width: 21rem;
+  height: 2rem;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  font-family: "Space Grotesk";
+  color: #0d3b66;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.busVoltageChart{
+  margin-top: 1rem;
+  width: 21rem;
+  height: 14rem;
+  padding: 0.5rem;
+  position: relative; 
+}
+
+.busVoltageChart canvas {
+  margin: 0.5rem;
+  position: absolute;
+  inset: 0;
+}
+
+/* shuntVoltageChart sizing using two different divs to divide sub-sec2-2x */
+
+.shuntVoltagetitle{
+  width: 21rem;
+  height: 2rem;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  font-family: "Space Grotesk";
+  color: hsl(209, 77%, 23%);
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.shuntVoltageChart{
+  margin-top: 1rem;
+  width: 21rem;
+  height: 14rem;
+  padding: 0.5rem;
+  position: relative; 
+}
+
+.shuntVoltageChart canvas {
+  margin: 0.5rem;
+  position: absolute;
+  inset: 0;
+}
+
+<ul>
+              <li> Panel Temperature : <%= allData[allData.length - 1].sensors.temperature %></li>
+              <li> Altitude : <%= allData[allData.length - 1].sensors.altitude %></li>
+              <li> Current : <%= allData[allData.length - 1].sensors.current %></li>
+              <li> Power : <%= allData[allData.length - 1].sensors.power %></li>
+              <li> Light intensity : <%= allData[allData.length - 1].sensors.light_intensity %></li>
+              <li> Dust density : <%= allData[allData.length - 1].sensors.dust_density %></li>
+              <li> Tilt angle : <%= allData[allData.length - 1].sensors.tilt_angle %></li>
+              <li> Ideal power : <%= allData[allData.length - 1].ai_output.ideal_power %></li>
+              <li> Efficiency drop : <%= allData[allData.length - 1].ai_output.efficiency_drop %></li>
+             </ul>
+
+
+             <% 
+          const majorFactor = allData[allData.length - 1].root_cause_analysis.major_factor; 
+          const contributingFactors = allData[allData.length - 1].root_cause_analysis.contributing_factors; 
+          const recommondations = allData[allData.length - 1].root_cause_analysis.recommendation; 
+          const next_24_hrs = allData[allData.length - 1].forecast.next_24_hours; 
+          const week_trends = allData[allData.length - 1].forecast.week_trend; 
+          %>
+          <div class="alert1">
+            <ul>
+              <li><b> Major Factor :</b> <%= majorFactor %> </li>
+              <% if (contributingFactors && contributingFactors.length > 0) { %>
+                 <li> <b>Contributing Factors :</b> <%= contributingFactors.join(', ') %> </li>
+              <% } else { %> 
+                 <li><b> Contributing Factors :</b> None </li>
+              <% } %>
+              <li><b> Recommendations :</b> <%= recommondations %> </li>
+            </ul>
+          </div>
