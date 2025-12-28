@@ -77,7 +77,7 @@ app.get("/dashboard", async (req, res) => {
 
 
 app.get("/api/solar", async (req, res) => {
-    const data = await AIDataCollection.find().sort({ timestamp: -1 });
+    const data = await AIDataCollection.find();
     res.json(data);
 });
 

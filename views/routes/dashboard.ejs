@@ -4,26 +4,25 @@
     <div class="sec1">
 
       <div class="sub-sec1x">
-        <h3>Last Updated  </h3>
-  <% 
-    // 1. Get the last item safely
-    const lastEntry = allData[allData.length - 1]; 
-    
-    // 2. Convert to string (handling potential Date objects)
-    const rawTimestamp = lastEntry.timestamp.toISOString ? lastEntry.timestamp.toISOString() : String(lastEntry.timestamp);
+  <h3>Last Updated</h3>
 
-    // 3. Now split will work
-    const [date, fullTime] = rawTimestamp.split('T');
-    const time = fullTime.replace('Z', '');
+  <%
+    const lastEntry = allData[allData.length - 1];
+    const ts = new Date(lastEntry.insight.timestamp);
+
+    const date = ts.toLocaleDateString();   // e.g. 26/12/2025
+    const time = ts.toLocaleTimeString();   // e.g. 5:32:18 PM
   %>
-  <h5>Date : <%= date %> </h5>
+
+  <h5>Date : <%= date %></h5>
   <h5>Time : <%= time %></h5>
 </div>
+
 
       <div class="sub-sec1">
         <h4 class="efficiencytext"> Efficiency Tracker</h4>
         <% 
-          const efficiencyValue = allData[allData.length - 1].ai_output.predicted_efficiency; 
+          const efficiencyValue = allData[allData.length - 1].insight.live_diagnosis.efficiency_pct; 
           const filledAngle = (efficiencyValue / 100) * 360; 
         %>
         <div class="efficiency-container">
@@ -37,8 +36,8 @@
       <div class="sub-sec1">
         <h4 class="healthtext"> Panel Health Indicator</h4>
         <% 
-          const healthValue = allData[allData.length - 1].ai_output.panel_health_score; 
-          const healthfilledAngle = (healthValue / 100) * 360; 
+          const healthValue = allData[allData.length - 1].insight.weather_benchmark.efficiency_score; 
+          const healthfilledAngle = ((healthValue*100) / 100) * 360; 
         %>
         <div class="health-container">
             <span class="health-value"><%= healthValue %>%</span>
@@ -50,7 +49,7 @@
 
       <div class="sub-sec1">
         <% 
-          const statusString = allData[allData.length - 1].ai_output.status; 
+          const statusString = allData[allData.length - 1].insight.live_diagnosis.health_score; 
         %>
         <h4 class="status">Panel status: <%= statusString %></h4>
          <div class="solar-panel-container">
@@ -78,10 +77,12 @@
       <div class="sub-sec2-1">
         <div class="sub-sec2-1x1 power">
           <% 
-          const powerGenerated = allData[allData.length - 1].ai_output.ideal_power; 
+          const powerGenerated = allData[allData.length - 1].insight.live_diagnosis.actual_power; 
+          const powerGeneratedPred = allData[allData.length - 1].insight.live_diagnosis.predicted_power; 
           %>
-          <h4 class="powerGeneratedtitle">Power Generation By Solar Panel: </h4>
-          <h1 class="powerGeneratedvalue"><%= powerGenerated %> KW</h1 class="powerGeneratedvalue">
+          <h6 class="powerGeneratedtitle">Power Generation By Solar Panel: </h6>
+          <h4 class="powerGeneratedvalue">Actual :<%= powerGenerated %> KW</h4>
+          <h4 class="powerGeneratedvalue">Predicted :<%= powerGeneratedPred %> KW</h4>
             
          </div>
         <div class="sub-sec2-1x1 chip">
@@ -279,12 +280,12 @@
         
         <div class="sub-sec2-2x"> 
           <!-- /////////////  Bus Voltage Graph code logic   ////////////// -->
-           <div class="busVoltagetitle">
-             <p> <i class="fa-solid fa-chart-line"></i> Bus Voltage Chart (Last 20 Records)</p>
+           <div class="efficiencytitle">
+             <p> <i class="fa-solid fa-chart-line"></i> Efficiency Graph</p>
           </div> 
 
-          <div class="busVoltageChart">
-            <canvas id="busVoltageChart"></canvas>
+          <div class="efficiencyChart">
+            <canvas id="efficiencyChart"></canvas>
           </div>
 
           <script>
@@ -296,18 +297,18 @@
             const recent = data.slice(-N).reverse();
 
             const labels = recent.map(d => 
-                new Date(d.timestamp).toLocaleTimeString()
+                new Date(d.insight.timestamp).toLocaleTimeString()
             );
 
-            const voltage = recent.map(d => d.sensors.bus_voltage);
+            const efficiency = recent.map(d => d.insight.live_diagnosis.efficiency_pct);
 
-            new Chart(document.getElementById("busVoltageChart"), {
+            new Chart(document.getElementById("efficiencyChart"), {
                 type: 'line',
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: "Bus Voltage (V)",
-                        data: voltage,
+                        label: "Efficiency",
+                        data: efficiency,
                         borderWidth: 2,
                         borderColor: "#0d4e87",
                         backgroundColor: "rgba(30,136,229,0.15)",
@@ -328,62 +329,73 @@
         <!-- ////////////////////////////////////////////////////////// -->
          <div class="sub-sec2-2x2">
 
-          <div class="shuntVoltagetitle">
-            <p><i class="fa-solid fa-chart-column"></i> Shunt Voltage Chart (Last 20 Records)<p>
+          <div class="predictiontitle">
+            <p><i class="fa-solid fa-chart-column"></i> Efficiency Predictions<p>
           </div>
 
-          <div class="shuntVoltageChart">
-            <canvas id="shuntVoltageChart"></canvas>
+          <div class="predictionChart">
+            <canvas id="predictionChart"></canvas>
           </div>
           
           <script>
-            async function loadSolarData2() {
-            const res = await fetch("/api/solar"); 
-            const data = await res.json();
+async function loadForecastEfficiency() {
+  const res = await fetch("/api/solar");
+  const data = await res.json();
 
-            const N = 20;
-            const recent = data.slice(-N).reverse();
+  // 1️⃣ Get latest document
+  const latest = data[data.length - 1];
 
-            const labels = recent.map(d => 
-                new Date(d.timestamp).toLocaleTimeString()
-            );
+  // 2️⃣ Extract five day forecast
+  const forecast = latest.insight.five_day_forecast;
 
-            const sh_voltage = recent.map(d => d.sensors.shunt_voltage);
+  // 3️⃣ Labels & values
+  const labels = forecast.map(d => d.day);
+  const efficiency = forecast.map(d => d.efficiency);
 
-            new Chart(document.getElementById("shuntVoltageChart"), {
-                type: 'bar',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                         label: "Shunt Voltage (V)",
-                         data: sh_voltage,
+  new Chart(document.getElementById("predictionChart"), {
+    type: "bar",   // 🔁 changed to bar
+    data: {
+      labels: labels,
+      datasets: [{
+        label: "Efficiency (%)  5 Day Forecast",
+        data: efficiency,
 
-                         backgroundColor: "rgba(15, 95, 244, 0.6)",
-                         borderColor: "#0f5ff4",
-                         borderWidth: 1,
-
-                         borderRadius: 6,     // rounded bars
-                         barPercentage: 0.7,  // bar width
-                         categoryPercentage: 0.8
-
-                    }]
-                },
-                options: {
-                        responsive: true,
-                        maintainAspectRatio: false 
-                        
-                }
-            });
+        backgroundColor: "rgba(46, 204, 113, 0.6)",
+        borderColor: "#2ecc71",
+        borderWidth: 1,
+        borderRadius: 6,     // rounded bars
+        barPercentage: 0.6,
+        categoryPercentage: 0.7
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 100,
+          title: {
+            display: true,
+            text: "Efficiency (%)"
+          }
         }
+      }
+    }
+  });
+}
 
-        loadSolarData2();
-        </script>
+loadForecastEfficiency();
+</script>
+
+
          </div>
          <div class="sub-sec2-2x3">
           hello
          </div>
       </div>
-      <div class="graphbtndiv">
+
+      <!-- <div class="graphbtndiv">
         <div class="one">
       <form method="GET" action="/graphs">
       <button class="cssbuttons-io">
@@ -397,9 +409,7 @@
 </button>
     </form>
     </div>
-    </div>
-
-
+    </div> -->
 
       <div class="sub-sec2-3">
 
@@ -407,32 +417,24 @@
           <h2> <i class="fa-solid fa-database"></i> Sensor Data :</h2>
         <div class="sub-sec2-3x1">
           <div class="sensorDatalist">
-             <ul>
-              <li> Panel Temperature : <%= allData[allData.length - 1].sensors.temperature %></li>
-              <li> Altitude : <%= allData[allData.length - 1].sensors.altitude %></li>
-              <li> Current : <%= allData[allData.length - 1].sensors.current %></li>
-              <li> Power : <%= allData[allData.length - 1].sensors.power %></li>
-              <li> Light intensity : <%= allData[allData.length - 1].sensors.light_intensity %></li>
-              <li> Dust density : <%= allData[allData.length - 1].sensors.dust_density %></li>
-              <li> Tilt angle : <%= allData[allData.length - 1].sensors.tilt_angle %></li>
-              <li> Ideal power : <%= allData[allData.length - 1].ai_output.ideal_power %></li>
-              <li> Efficiency drop : <%= allData[allData.length - 1].ai_output.efficiency_drop %></li>
-             </ul>
+             
+             hello
           </div>
         </div>
         </div>
         <div class="sub-sec2-3x2">
           <h2> <i class="fa-solid fa-triangle-exclamation"></i> Alerts & Forecast :</h2>
           <% 
-          const majorFactor = allData[allData.length - 1].root_cause_analysis.major_factor; 
-          const contributingFactors = allData[allData.length - 1].root_cause_analysis.contributing_factors; 
-          const recommondations = allData[allData.length - 1].root_cause_analysis.recommendation; 
-          const next_24_hrs = allData[allData.length - 1].forecast.next_24_hours; 
-          const week_trends = allData[allData.length - 1].forecast.week_trend; 
+          const rootcause = allData[allData.length - 1].insight.live_diagnosis.root_cause; 
+          const contributingFactors = allData[allData.length - 1].insight.weather_benchmark.recommondation; 
+          const recommondations = allData[allData.length - 1].insight.weather_benchmark.recommondation; 
+          const visibility_km = allData[allData.length - 1].insight.weather_benchmark.weather_snapshot.visibility_km; 
+          const clouds = allData[allData.length - 1].insight.weather_benchmark.weather_snapshot.clouds;
+          const wind_cooling_factor = allData[allData.length - 1].insight.weather_benchmark.weather_snapshot.wind_cooling_factor;
           %>
           <div class="alert1">
             <ul>
-              <li><b> Major Factor :</b> <%= majorFactor %> </li>
+              <li><b> Root Cause :</b> <%= rootcause %> </li>
               <% if (contributingFactors && contributingFactors.length > 0) { %>
                  <li> <b>Contributing Factors :</b> <%= contributingFactors.join(', ') %> </li>
               <% } else { %> 
@@ -443,8 +445,9 @@
           </div>
           <div class="alert2">
             <ul>
-              <li><b> Next 24 Hrs prediction :</b> <%= next_24_hrs %> </li>
-              <li><b> Week Trends :</b> <%= week_trends %> </li>
+              <li><b> visibility_km :</b> <%= visibility_km %> </li>
+              <li><b> clouds :</b> <%= clouds %> </li>
+              <li><b> wind_cooling_factor :</b> <%= wind_cooling_factor %> </li>
             </ul>
           </div>
         </div>

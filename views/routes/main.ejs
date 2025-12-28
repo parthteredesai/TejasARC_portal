@@ -109,15 +109,15 @@
   <% 
   if (
     alertData &&
-    alertData.root_cause_analysis &&
-    alertData.root_cause_analysis.major_factor !== "None"
+    alertData.insight.weather_benchmark. &&
+    alertData.insight.weather_benchmark.action !== "None"
   ) { 
 %>
   <div id="alertModal" class="modal-overlay">
     <div class="modal-box">
       <h3>⚠️ System Alert</h3>
 
-      <h2><%= alertData.root_cause_analysis.major_factor %></h2>
+      <h2><%= alertData.insight.weather_benchmark.action %></h2>
 
       <button id="closeModal">Close</button>
     </div>

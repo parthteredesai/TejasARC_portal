@@ -1,52 +1,52 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const dataSchema = new mongoose.Schema({
-  panel_id: {
+const dataSchema = new Schema({
+  status: {
     type: String,
     required: true,
-    index: true,
   },
 
-  timestamp: {
-    type: Date,
-    required: true,
-  },
+  insight: {
+    timestamp: {
+      type: Date,
+      default: Date.now,
+      required: true,
+    },
 
-  sensors: {
-    temperature: Number,
-    humidity: Number,
-    pressure: Number,
-    altitude: Number,
-    bus_voltage: Number,
-    shunt_voltage: Number,
-    current: Number,
-    power: Number,
-    light_intensity: Number,
-    dust_density: Number,
-    tilt_angle: Number,
-  },
+    live_diagnosis: {
+      actual_power: Number,
+      predicted_power: Number,
+      efficiency_pct: Number,
+      health_score: String,
+      root_cause: String,
+      action: String,
+    },
 
-  ai_output: {
-    predicted_efficiency: Number,
-    ideal_power: Number,
-    efficiency_drop: Number,
-    panel_health_score: Number,
-    weather_condition: String,
-    status: String,
-  },
+    weather_benchmark: {
+      efficiency_score: Number,
+      benchmark_pct: Number,
+      temp: Number,
+      recommendation: String,
 
-  root_cause_analysis: {
-    major_factor: String,
-    contributing_factors: [String],
-    recommendation: String,
-  },
+      weather_snapshot: {
+        visibility_km: Number,
+        clouds: Number,
+        wind_cooling_factor: Number,
+      },
+    },
 
-  forecast: {
-    next_24_hours: String,
-    week_trend: String,
+    five_day_forecast: [
+      {
+        day: String,
+        efficiency: Number,
+        weather: String,
+        soiling_loss_factor: Number,
+      },
+    ],
   },
-});
+},
+);
 
 const postDataDb = mongoose.connection.useDb("TejasArk_post_data"); 
 

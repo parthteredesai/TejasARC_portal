@@ -3,15 +3,15 @@
 /* -------------- dashboard intro text ------------------ */
 
 .dashIntro {
-  background: linear-gradient(to right, #2c3e50, #6294ac,#add9ef);
+  background: linear-gradient(to right, #004181, #2ba9e4,#add9ef);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 3rem;
-  font-weight: 600;
+  font-size: 3.5rem;
+  font-weight: 800;
   letter-spacing: 0.1em;
  
-  font-family: "lilex", sans-serif; 
+  font-family: "DM Sans", sans-serif; 
   margin-top: 0.7rem;
   margin-left: 1.5rem;
   margin-bottom: 0.5rem;
@@ -335,7 +335,7 @@
 
 .powerGeneratedtitle{
   font-family: "Space Grotesk";
-  font-weight: 600;
+  font-weight: 400;
   padding-left: 1.5rem;
   padding-top: 1.5rem;
   color: #006a4e;
@@ -504,7 +504,7 @@
 
 /* busVoltageChart sizing using two different divs to divide sub-sec2-2x */
 
-.busVoltagetitle{
+.efficiencytitle{
   width: 21rem;
   height: 2rem;
   padding-left: 1rem;
@@ -515,7 +515,7 @@
   font-weight: 500;
 }
 
-.busVoltageChart{
+.efficiencyChart{
   margin-top: 1rem;
   width: 21rem;
   height: 14rem;
@@ -523,7 +523,7 @@
   position: relative; 
 }
 
-.busVoltageChart canvas {
+.efficiencyChart canvas {
   margin: 0.5rem;
   position: absolute;
   inset: 0;
@@ -531,7 +531,7 @@
 
 /* shuntVoltageChart sizing using two different divs to divide sub-sec2-2x */
 
-.shuntVoltagetitle{
+.predictiontitle{
   width: 21rem;
   height: 2rem;
   padding-left: 1rem;
@@ -542,7 +542,7 @@
   font-weight: 500;
 }
 
-.shuntVoltageChart{
+.predictionChart{
   margin-top: 1rem;
   width: 21rem;
   height: 14rem;
@@ -550,7 +550,7 @@
   position: relative; 
 }
 
-.shuntVoltageChart canvas {
+.predictionChart canvas {
   margin: 0.5rem;
   position: absolute;
   inset: 0;
