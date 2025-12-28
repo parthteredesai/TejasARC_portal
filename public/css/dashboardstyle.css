@@ -623,7 +623,7 @@
 }
 
 .sub-sec2-3x2{
-   width: 26rem;
+   width: 25rem;
    min-height: 17.3rem;
     margin: 0.3rem; 
     border-radius: 7px; 
@@ -640,7 +640,7 @@
 }
 
 .alert1{
-  width: 25.3rem;
+  width: 25.8rem;
   min-height: 6rem;
   border-radius: 10px; 
   background-color: #ffe5ec;
@@ -747,6 +747,7 @@
   transform: scale(0.95);
 }
 
+
 @media (max-width: 450px) {
 
   /* Reset spacing */
@@ -798,6 +799,7 @@
     border-radius: 16px;
     padding: 0.4rem 0;
   }
+ 
 
   /* Efficiency + health trackers */
   .efficiency-container,
@@ -817,6 +819,10 @@
     margin: 0.3rem 0 0;
     padding-top: 0;
     text-align: center;
+  }
+
+  .efficiencytext{
+    padding-top: 1.2rem;
   }
 
   /* Progress ring thickness adjustment */
@@ -893,6 +899,14 @@
   .predictionChart {
     width: 100%;
     min-height: 11.5rem;
+  }
+
+  .efficiencytitle{
+    padding-left: 4rem;
+  }
+
+  .predictiontitle{
+    padding-left: 2.5rem;
   }
 
   /* Sensor + alerts */
