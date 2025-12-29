@@ -1,8 +1,10 @@
-# TejasARC Portal
+# TejasArk Portal
 
-**TejasARC Portal** is a web application developed as an **IEEE Myosa Sensors Competition**. It serves as the main portal for the TejasARC team, providing dynamic views, user interaction, and content delivery using Node.js, Express, and EJS templating.
+**TejasArk Portal** is a web application developed as an **IEEE Myosa Sensors Competition**. It serves as the main portal for the TejasARC team, providing dynamic views, user interaction, and content delivery using Node.js, Express, and EJS templating.
 
-📦 The project includes server-side code (Node.js/Express), frontend views (EJS), and static assets (CSS/Images).:contentReference[oaicite:1]{index=1}
+👉 **Live demo of website:** [TejasArk Portal](https://tejasarc.onrender.com)
+
+📦 The project includes server-side code (Node.js/Express), frontend views (EJS), and static assets (CSS/Images).
 
 ---
 
@@ -64,18 +66,49 @@ TejasARC_portal/
    cd TejasARC_portal
 
 3.Install dependencies
+<ul>
   All required dependencies are in package.json.
   In your project terminal inside /TejasArk_portal perform **npm install**. It will automatically download all required depencies in your system.
   steps:
-  1️⃣ Prerequisites
-  You must have Node.js installed (which includes npm)
-  2️⃣ Clone the repository
-  git clone https://github.com/parthteredesai/TejasARC_portal.git
-  cd TejasARC_portal
-  3️⃣ Install dependencies
-  npm install
-  4️⃣ Start the application
-  npm start
-  or
-  node app.js
+  <li>1️⃣ Prerequisites : You must have Node.js installed (which includes npm) </li>
+  <li>2️⃣ Clone the repository :
+    ```bash
+    
+    git clone https://github.com/parthteredesai/TejasARC_portal.git
+    cd TejasARC_portal
+  </li>
+  <li>3️⃣ Install dependencies :
+   ```bash
+    
+    npm install
+  </li>
+  <li>4️⃣ Start the application :
+    ```bash
 
+    npm start
+   or
+    ```bash
+
+    node app.js 
+
+   The application should now be running at http://localhost:8080/. 
+  </li>
+</ul>
+
+## 📌 Important
+
+- 🔹make your owm .env file for weather.api & Mongodb URL
+
+🤝 Contributing
+## Contributions are welcome! Please follow these steps:
+- Fork the Project.
+- Create your Feature Branch (git checkout -b feature/Feature).
+- Commit your Changes (git commit -m 'Add some Feature').
+- Push to the Branch (git push origin feature/AmazingFeature).
+- Open a Pull Request.
+
+📄 License
+None
+
+📧 Contact
+Team TejasArk-
