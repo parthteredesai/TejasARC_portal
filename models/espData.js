@@ -1,20 +1,34 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const espSchema = new mongoose.Schema({
-  temperature: Number,
-  humidity: Number,
-  pressure: Number,
-  altitude: Number,
-  bus_voltage: Number,
-  shunt_voltage: Number,
-  current: Number,
-  power: Number,
-  light_intensity: Number,
-  dust_density: Number,
-  tilt_angle: Number
-});
+const espSchema = new Schema({
+  
+    lux: Number,
+    r: Number,
+    g: Number,
+    b: Number,
+    v: Number,
+    ma: Number,
+    vib: Number,
+    prox: Number,
+    atp: Number,
+    ptp: Number,
+    hum: Number,
+    tlt: Number,
+    dst: Number,
+    ts: {
+      type: Date,
+      default: Date.now,
+    },
+  }
+);
 
 const espdataModel = mongoose.connection.useDb("TejasArk_pre_data");
 
-module.exports = espdataModel.model("espdataModel", espSchema);
+const espDataCollectionModel = espdataModel.model(
+  "espDataCollection",   // Mongoose model name
+  espSchema,
+  "espDatacollection"    // Actual MongoDB collection name
+);
+
+module.exports = espDataCollectionModel;

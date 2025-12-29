@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const port = process.env.PORT || 8080;
 const AIDataCollection = require("./models/dataModel.js"); //importing (requiring) datamodels
-const espData = require("./models/espData.js"); //importing (requiring) datamodels
+const espDataCollection = require("./models/espData.js"); //importing (requiring) datamodels
 const path = require("path");
 const ejsMate = require("ejs-mate");
 const fetch = require("node-fetch");
@@ -42,7 +42,7 @@ app.get("/main", async (req, res) => {
 app.get("/dashboard", async (req, res) => {
   // Fetch MongoDB data
   const allData = await AIDataCollection.find({});
-
+  const espdata = await espDataCollection.findOne().sort({ _id: -1 }).lean();
   // Weather API setup
   const CITY = "Mumbai"; // change city as needed
   const API_KEY = process.env.OPENWEATHER_API_KEY;
@@ -72,7 +72,7 @@ app.get("/dashboard", async (req, res) => {
     : null;
 
   // Render EJS with MongoDB + weather data
-  res.render("routes/dashboard", { allData, weather });
+  res.render("routes/dashboard", { allData, weather, espdata});
 });
 
 
@@ -81,12 +81,18 @@ app.get("/api/solar", async (req, res) => {
     res.json(data);
 });
 
-app.get("/panel", (req, res) => {
-  res.render("routes/panel");
+app.get("/panel", async (req, res) => {
+  const espdata = await espDataCollection.findOne().sort({ _id: -1 }).lean();
+  res.render("routes/panel", {espdata});
+});
+
+app.get("/graphs", async (req, res) => {
+  const espdata = await espDataCollection.find({});
+  res.render("routes/graphs", {espdata});
 });
 
 app.get("/notifications", async (req, res) => {
-  const allData = await AIDataCollection.find().sort({ "insight.timestamp": -1 });
+  const allData = await AIDataCollection.find().sort({ "_id": -1 });
 
   res.render("routes/notifications",  {allData});
 });

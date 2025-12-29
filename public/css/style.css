@@ -383,81 +383,103 @@ html, body {
   background: #c9302c;
 }
 
+/* --------------- */
 
 
-
-
-
-
-
-/* --- Global & Panel Wrapper Styling --- */
-
-/* Unique class name for the panel structure */
-.energy-collector-unit {
+/* PANEL CONTAINER */
+.sensor-overlay {
+  position: relative;
   width: 420px;
   height: 420px;
-  padding: 10px;
-  background-color: #2c3e50; /* Dark frame color */
-  border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-  display: flex; /* Use flexbox for easy grid layout */
-  flex-wrap: wrap;
-  gap: 5px; /* Spacing between the cells/modules */
-  margin: 50px auto;
-}
+  border-radius: 10px;
 
-/* --- Individual Cell Styling with Detailed Lines --- */
+  /* SOLAR PANEL BASE */
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.08), rgba(0,0,0,0.3)),
+    repeating-linear-gradient(
+      to right,
+      rgba(180,180,180,0.25) 0,
+      rgba(180,180,180,0.25) 1px,
+      transparent 1px,
+      transparent 32px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(180,180,180,0.18) 0,
+      rgba(180,180,180,0.18) 1px,
+      transparent 1px,
+      transparent 32px
+    ),
+    #0f2a44;
 
-/* Unique class name for individual photovoltaic cells */
-.pv-module {
-  width: calc(25% - 4px);
-  height: calc(25% - 4px);
-  background-color: #1f3044; /* Cell color (Deep Blue/Black) */
-  border-radius: 3px;
-  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
-  position: relative;
+  box-shadow:
+    inset 0 0 25px rgba(255,255,255,0.12),
+    inset 0 -10px 20px rgba(0,0,0,0.6),
+    0 12px 30px rgba(0,0,0,0.6);
+
+  padding: 20px;
+  color: #e9f6ff;
   overflow: hidden;
 }
 
-/* ::before pseudo-element for the Vertical Busbars (Silver Lines) */
-.pv-module::before {
+/* GLASS SHINE */
+.sensor-overlay::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Use repeating-linear-gradient for the vertical silver lines (Busbars) */
-  background: repeating-linear-gradient(
-    to right,
-    #bdbdbd 0,
-    /* Silver Line Start */ #bdbdbd 1px,
-    /* Silver Line Thickness (1px) */ transparent 1px,
-    /* Gap Start */ transparent 30px
-  ); /* Gap End (adjust '30px' to change spacing) */
-  opacity: 0.8; /* Make the lines subtle */
+  top: -40%;
+  left: -40%;
+  width: 180%;
+  height: 80%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.18),
+    transparent
+  );
+  transform: rotate(-10deg);
+  pointer-events: none;
 }
 
-/* ::after pseudo-element for the Horizontal Fingers/Grid Lines */
-.pv-module::after {
+/* DATA GRID */
+.sensor-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  font-size: 14px;
+}
+
+/* LABELS */
+.sensor-grid span:nth-child(odd) {
+  color: #7fc7ff;
+  font-weight: 600;
+}
+
+/* VALUES */
+.sensor-grid span:nth-child(even) {
+  color: #ffffff;
+}
+
+/* PANEL BORDER FRAME */
+.sensor-overlay::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Use repeating-linear-gradient for the horizontal lines (Fingers) */
-  background: repeating-linear-gradient(
-    to bottom,
-    #bdbdbd 0,
-    /* Silver Line Start */ #bdbdbd 0.5px,
-    /* Very thin line thickness (0.5px) */ transparent 0.5px,
-    /* Gap Start */ transparent 5px
-  ); /* Gap End (adjust '5px' for tight spacing) */
-  opacity: 0.2; /* Keep these lines very faint/subtle */
+  inset: 0;
+  border-radius: 10px;
+  border: 2px solid rgba(255,255,255,0.15);
+  pointer-events: none;
+}
+/* CENTER PANEL WITH SPACING */
+.panel-center {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 80px;   /* space from navbar */
+  margin-bottom: 80px; /* space from footer */
 }
 
-/* --- Global & Panel Wrapper Styling End --- */
+
 
 /* --- Mobile Collapse Styling --- */
 /* This kicks in when the hamburger menu is expanded */
@@ -588,6 +610,46 @@ html, body {
 
   .modal-box h4 {
     font-size: 16px;
+  }
+}
+@media (max-width: 450px) {
+
+  /* Center wrapper spacing */
+  .panel-center {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 0 12px; /* side breathing space */
+  }
+
+  /* Scale solar panel */
+  .sensor-overlay {
+    width: 100%;
+    max-width: 340px;
+    height: 340px;
+    padding: 14px;
+    border-radius: 8px;
+  }
+
+  /* Adjust grid text */
+  .sensor-grid {
+    font-size: 12px;
+    gap: 6px 10px;
+  }
+
+  /* Softer shadows for mobile */
+  .sensor-overlay {
+    box-shadow:
+      inset 0 0 18px rgba(255,255,255,0.1),
+      inset 0 -6px 14px rgba(0,0,0,0.5),
+      0 8px 20px rgba(0,0,0,0.45);
+  }
+
+  /* Glass shine alignment */
+  .sensor-overlay::before {
+    top: -30%;
+    left: -50%;
+    width: 200%;
+    height: 70%;
   }
 }
 

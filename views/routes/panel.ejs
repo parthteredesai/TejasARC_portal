@@ -1,23 +1,51 @@
 <% layout("/layouts/boilerplate") %>
-<body>
-  <h1>hello</h1>
+
+<%
+  /* ===== DEFINE VARIABLES ONCE ===== */
+  const lux  = espdata?.lux  ?? "N/A";
+  const r    = espdata?.r    ?? "N/A";
+  const g    = espdata?.g    ?? "N/A";
+  const b    = espdata?.b    ?? "N/A";
+  const v    = espdata?.v    ?? "N/A";
+  const ma   = espdata?.ma   ?? "N/A";
+  const vib  = espdata?.vib  ?? "N/A";
+  const prox = espdata?.prox ?? "N/A";
+  const atp  = espdata?.atp  ?? "N/A";
+  const ptp  = espdata?.ptp  ?? "N/A";
+  const hum  = espdata?.hum  ?? "N/A";
+  const tlt  = espdata?.tlt  ?? "N/A";
+  const dst  = espdata?.dst  ?? "N/A";
+%>
+
+<div class="panel-center">
+
   <div class="energy-collector-unit">
-    <div class="pv-module"></div>
-    <div class="pv-module"></div>
-    <div class="pv-module"></div>
-    <div class="pv-module"></div>
-    <div class="pv-module"></div>
-    <div class="pv-module"></div>
-    <div class="pv-module"></div>
-    <div class="pv-module"></div>
-    <div class="pv-module"></div>
-    <div class="pv-module"></div>
-    <div class="pv-module"></div>
-    <div class="pv-module"></div>
-    <div class="pv-module"></div>
-    <div class="pv-module"></div>
-    <div class="pv-module"></div>
-    <div class="pv-module"></div>
+
+    <!-- SENSOR DATA OVERLAY -->
+    <div class="sensor-overlay">
+      <div class="sensor-grid">
+        <span>Light</span><span><%= lux %> lux</span>
+        <span>RGB</span><span>R <%= r %> G <%= g %> B <%= b %></span>
+        <span>Voltage</span><span><%= v %> V</span>
+        <span>Current</span><span><%= ma %> mA</span>
+        <span>Vibration</span><span><%= vib %></span>
+        <span>Proximity</span><span><%= prox %></span>
+        <span>Ambient</span><span><%= atp %> &#8451;</span>
+        <span>Panel</span><span><%= ptp %> &#8451;</span>
+        <span>Humidity</span><span><%= hum %> %</span>
+        <span>Tilt</span><span><%= tlt %></span>
+        <span>Dust</span><span><%= dst %></span>
+      </div>
+    </div>
+
+    <!-- SOLAR CELLS -->
+    <% for (let i = 0; i < 16; i++) { %>
+      <div class="pv-module"></div>
+    <% } %>
+
   </div>
 
-</body>
+</div>
+
+
+
