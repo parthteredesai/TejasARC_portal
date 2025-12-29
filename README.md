@@ -25,36 +25,35 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="50" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="50" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="50" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="50" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="50" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/handlebars/handlebars-original.svg" width="50" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="50" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="50" />
+  <img src="https://img.shields.io/badge/Express.js-Backend%20Framework-lightgrey?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/EJS-Template%20Engine-white?style=for-the-badge&logo=javascript&logoColor=black" />
 </p>
 
 <p align="center">
-  <strong>HTML • CSS • JavaScript • Node.js • Express.js • MongoDB • EJS</strong>
+  <strong>
+    HTML • CSS • JavaScript • Node.js • Express.js • MongoDB • EJS • Python • C++
+  </strong>
 </p>
 
+## Folder Architecture
 
----
-
-## 📁 Repository Structure
 TejasARC_portal/
-├── images/ # Asset images
-├── init/ # Initialization scripts/configs
-├── models/ # Data or DB models
-├── node_modules/ # Installed dependencies
+├── images/              # Asset images
+├── init/                # Initialization scripts / configs
+├── models/              # Data / database models
+├── node_modules/        # Installed dependencies
 ├── public/
-│ └── css/ # Stylesheets
-├── views/ # EJS view templates
-├── .gitignore
-├── app.js # Main server entry
-├── package.json # Project dependencies & scripts
-├── package-lock.json
+│   └── css/             # Stylesheets
+├── views/               # EJS view templates
+├── .gitignore           # Git ignore rules
+├── app.js               # Main server entry point
+├── package.json         # Project dependencies & scripts
+└── package-lock.json    # Dependency lock file
 
 
-> Structure based on repository file listing.:contentReference[oaicite:2]{index=2}
-
----
 
 ## 🚀 Installation
 
