@@ -1,8 +1,8 @@
 # TejasArk Portal
 
-**TejasArk Portal** is a web application developed as an **IEEE Myosa Sensors Competition**. It serves as the main portal for the TejasARC team, providing dynamic views, user interaction, and content delivery using Node.js, Express, and EJS templating.
+**TejasArk Portal** is a web application developed as an **IEEE Myosa Sensors Competition**. It serves as the main portal for the TejasArk team, providing dynamic views, user interaction, and content delivery using Node.js, Express, and EJS templating.
 
-👉 **Live demo of website:** [TejasArk Portal](https://tejasarc.onrender.com)
+👉 **Live demo of website:** [TejasArk Portal](https://tejasarc.onrender.com) (we have got our render link name "tejasarc" instead "TejasArk" for unique domain name)
 
 📦 The project includes server-side code (Node.js/Express), frontend views (EJS), and static assets (CSS/Images).
 
@@ -39,19 +39,7 @@
 </p>
 
 ## Folder Architecture
-
-TejasARC_portal/
-├── images/              # Asset images
-├── init/                # Initialization scripts / configs
-├── models/              # Data / database models
-├── node_modules/        # Installed dependencies
-├── public/
-│   └── css/             # Stylesheets
-├── views/               # EJS view templates
-├── .gitignore           # Git ignore rules
-├── app.js               # Main server entry point
-├── package.json         # Project dependencies & scripts
-└── package-lock.json    # Dependency lock file
+<img src="./images/folders.png" alt="Folder Architecture" width="600" hight="600">
 
 
 
@@ -60,9 +48,9 @@ TejasARC_portal/
 1. **Clone the repo**
 
    ```bash
-   git clone https://github.com/parthteredesai/TejasARC_portal.git
+   git clone https://github.com/parthteredesai/TejasArk_portal.git
 2. Navigate to project folder
-   cd TejasARC_portal
+   cd TejasArk_portal
 
 3.Install dependencies
 <ul>
@@ -73,8 +61,8 @@ TejasARC_portal/
   <li>2️⃣ Clone the repository :
     ```bash
     
-    git clone https://github.com/parthteredesai/TejasARC_portal.git
-    cd TejasARC_portal
+    git clone https://github.com/parthteredesai/TejasArk_portal.git
+    cd TejasArk_portal
   </li>
   <li>3️⃣ Install dependencies :
    ```bash
