@@ -39,19 +39,7 @@
 </p>
 
 ## Folder Architecture
-
-TejasArk_portal/
-├── images/              # Asset images
-├── init/                # Initialization scripts / configs
-├── models/              # Data / database models
-├── node_modules/        # Installed dependencies
-├── public/
-│   └── css/             # Stylesheets
-├── views/               # EJS view templates
-├── .gitignore           # Git ignore rules
-├── app.js               # Main server entry point
-├── package.json         # Project dependencies & scripts
-└── package-lock.json    # Dependency lock file
+<img src="./images/folders.png" alt="Folder Architecture" width="200">
 
 
 
