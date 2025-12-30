@@ -39,7 +39,7 @@
 </p>
 
 ## Folder Architecture
-<img src="./images/folders.png" alt="Folder Architecture" width="200">
+<img src="./images/folders.png" alt="Folder Architecture" width="600" hight="600">
 
 
 
