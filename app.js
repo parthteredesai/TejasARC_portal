@@ -77,18 +77,13 @@ app.get("/dashboard", async (req, res) => {
 
 
 app.get("/api/solar", async (req, res) => {
-    const data = await AIDataCollection.find().sort({ "insight.timestamp": -1 });
+    const data = await AIDataCollection.find().sort({ _id: -1 }).lean();
     res.json(data);
 });
 
 app.get("/panel", async (req, res) => {
   const espdata = await espDataCollection.findOne().sort({ _id: -1 }).lean();
   res.render("routes/panel", {espdata});
-});
-
-app.get("/graphs", async (req, res) => {
-  const espdata = await espDataCollection.find({});
-  res.render("routes/graphs", {espdata});
 });
 
 app.get("/notifications", async (req, res) => {

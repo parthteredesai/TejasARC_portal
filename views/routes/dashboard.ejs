@@ -294,7 +294,7 @@
             const data = await res.json();
 
             const N = 20;
-            const recent = data.slice(-N).reverse();
+            const recent = data.slice(N).reverse();
 
             const labels = recent.map(d => new Date(d.insight.timestamp).toLocaleTimeString());
 
@@ -442,7 +442,7 @@ loadForecastEfficiency();
               <li><b> Proximity :</b> <%= prox %> </li>
               <li><b> Ambient temp. :</b> <%= atp %>&#8451 </li>
               <li><b> Panel temp. :</b> <%= ptp %>&#8451 </li>
-              <li><b> Humidity :</b> <%= atp %> % </li>
+              <li><b> Humidity :</b> <%= hum %> % </li>
               <li><b> Tilt :</b> <%= tlt %>&deg degrees </li>
               <li><b> Dust :</b> <%= dst %> &#956g/m<sup>3</sup> </li>
             </ul>
