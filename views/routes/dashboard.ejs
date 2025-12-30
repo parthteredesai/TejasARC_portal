@@ -294,7 +294,7 @@
             const data = await res.json();
 
             const N = 20;
-            const recent = data.slice(N).reverse();
+            const recent = data.slice(-N).reverse();
 
             const labels = recent.map(d => new Date(d.insight.timestamp).toLocaleTimeString());
 
