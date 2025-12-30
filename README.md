@@ -1,6 +1,6 @@
 # TejasArk Portal
 
-**TejasArk Portal** is a web application developed as an **IEEE Myosa Sensors Competition**. It serves as the main portal for the TejasARC team, providing dynamic views, user interaction, and content delivery using Node.js, Express, and EJS templating.
+**TejasArk Portal** is a web application developed as an **IEEE Myosa Sensors Competition**. It serves as the main portal for the TejasArk team, providing dynamic views, user interaction, and content delivery using Node.js, Express, and EJS templating.
 
 👉 **Live demo of website:** [TejasArk Portal](https://tejasarc.onrender.com) (we have got our render link name "tejasarc" instead "TejasArk" for unique domain name)
 
@@ -40,7 +40,7 @@
 
 ## Folder Architecture
 
-TejasARC_portal/
+TejasArk_portal/
 ├── images/              # Asset images
 ├── init/                # Initialization scripts / configs
 ├── models/              # Data / database models
@@ -62,7 +62,7 @@ TejasARC_portal/
    ```bash
    git clone https://github.com/parthteredesai/TejasArk_portal.git
 2. Navigate to project folder
-   cd TejasARC_portal
+   cd TejasArk_portal
 
 3.Install dependencies
 <ul>
