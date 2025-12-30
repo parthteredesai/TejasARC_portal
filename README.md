@@ -60,7 +60,7 @@ TejasARC_portal/
 1. **Clone the repo**
 
    ```bash
-   git clone https://github.com/parthteredesai/TejasARC_portal.git
+   git clone https://github.com/parthteredesai/TejasArk_portal.git
 2. Navigate to project folder
    cd TejasARC_portal
 
@@ -73,7 +73,7 @@ TejasARC_portal/
   <li>2️⃣ Clone the repository :
     ```bash
     
-    git clone https://github.com/parthteredesai/TejasARC_portal.git
+    git clone https://github.com/parthteredesai/TejasArk_portal.git
     cd TejasARC_portal
   </li>
   <li>3️⃣ Install dependencies :
