@@ -428,18 +428,23 @@ loadForecastEfficiency();
           const hum = espdata.hum; 
           const tlt = espdata.tlt; 
           const dst = espdata.dst; 
+          const tsp = new Date(espdata.ts);
+
+    const espdate = tsp.toLocaleDateString();   // e.g. 26/12/2025
+    const esptime = tsp.toLocaleTimeString();   // e.g. 5:32:18 PM
           %>
           <ul>
-              <li><b> Light Irradiance :</b> <%= lux %> </li>
+              <li><b> Date & Time :</b> <%= espdate %> <%= esptime %> </li>
+              <li><b> Light Irradiance :</b> <%= lux %> lux </li>
               <li><b> R :</b> <%= r %> <b> G :</b> <%= g %> <b> B :</b> <%= b %></li>
               <li><b> Voltage :</b> <%= v %> V <b>, Current :</b> <%= ma %> mA</li>
-              <li><b> Vibration :</b> <%= vib %> </li>
+              <li><b> Vibration :</b> <%= vib %> mm/s </li>
               <li><b> Proximity :</b> <%= prox %> </li>
               <li><b> Ambient temp. :</b> <%= atp %>&#8451 </li>
               <li><b> Panel temp. :</b> <%= ptp %>&#8451 </li>
-              <li><b> Humidity :</b> <%= atp %> </li>
-              <li><b> Tilt :</b> <%= tlt %> </li>
-              <li><b> Dust :</b> <%= dst %> </li>
+              <li><b> Humidity :</b> <%= atp %> % </li>
+              <li><b> Tilt :</b> <%= tlt %>&deg degrees </li>
+              <li><b> Dust :</b> <%= dst %> &#956g/m<sup>3</sup> </li>
             </ul>
           </div>
         </div>
