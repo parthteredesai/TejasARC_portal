@@ -62,7 +62,7 @@
     ```bash
     
     git clone https://github.com/parthteredesai/TejasArk_portal.git
-    cd TejasARC_portal
+    cd TejasArk_portal
   </li>
   <li>3️⃣ Install dependencies :
    ```bash
