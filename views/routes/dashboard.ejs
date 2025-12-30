@@ -20,7 +20,7 @@
 
 
       <div class="sub-sec1">
-        <h4 class="efficiencytext"> Efficiency Tracker</h4>
+        <h4 class="efficiencytext"> Live Efficiency </h4>
         <% 
           const efficiencyValue = allData[allData.length - 1].insight.live_diagnosis.efficiency_pct; 
           const filledAngle = (efficiencyValue / 100) * 360; 
@@ -34,7 +34,7 @@
       </div>
 
       <div class="sub-sec1">
-        <h4 class="healthtext"> Panel Health Indicator</h4>
+        <h4 class="healthtext"> Today's Predicted Efficiency</h4>
         <% 
           const healthValue = allData[allData.length - 1].insight.weather_benchmark.efficiency_score; 
           const healthfilledAngle = ((healthValue*100) / 100) * 360; 
@@ -81,8 +81,8 @@
           const powerGeneratedPred = allData[allData.length - 1].insight.live_diagnosis.predicted_power; 
           %>
           <h4 class="powerGeneratedtitle">Power Generation By Solar Panel: </h4>
-          <h4 class="powerGeneratedvalue">Actual :<%= powerGenerated %> KW</h4>
-          <h4 class="powerGeneratedvalue">Predicted :<%= powerGeneratedPred %> KW</h4>
+          <h4 class="powerGeneratedvalue">Actual :<%= powerGenerated %> W</h4>
+          <h4 class="powerGeneratedvalue">Predicted :<%= powerGeneratedPred %> W</h4>
             
          </div>
         <div class="sub-sec2-1x1 chip">
@@ -401,7 +401,7 @@ loadForecastEfficiency();
             <li> <b>Benchmark % :</b> <%= benchmark %> %</li>
             <li> <b>Temperature :</b> <%= temp %>&#8451</li>
             <br>
-            <b>Tommorow's Predictions: </b>
+            <b>Tomorrow's Predictions: </b>
             <li> <b>Efficiency :</b> <%= fivedayeff %></li>
             <li><%= fivedaymeta %></li>
           </ul>
@@ -435,7 +435,7 @@ loadForecastEfficiency();
               <li><b> Voltage :</b> <%= v %> V <b>, Current :</b> <%= ma %> mA</li>
               <li><b> Vibration :</b> <%= vib %> </li>
               <li><b> Proximity :</b> <%= prox %> </li>
-              <li><b> Anbient temp. :</b> <%= atp %>&#8451 </li>
+              <li><b> Ambient temp. :</b> <%= atp %>&#8451 </li>
               <li><b> Panel temp. :</b> <%= ptp %>&#8451 </li>
               <li><b> Humidity :</b> <%= atp %> </li>
               <li><b> Tilt :</b> <%= tlt %> </li>
@@ -467,9 +467,9 @@ loadForecastEfficiency();
           </div>
           <div class="alert2">
             <ul>
-              <li><b> visibility :</b> <%= visibility_km %> Km </li>
-              <li><b> clouds :</b> <%= clouds %> </li>
-              <li><b> wind cooling factor :</b> <%= wind_cooling_factor %> </li>
+              <li><b> Visibility :</b> <%= visibility_km %> Km </li>
+              <li><b> Clouds :</b> <%= clouds %> </li>
+              <li><b> Wind Cooling Factor :</b> <%= wind_cooling_factor %> </li>
             </ul>
           </div>
         </div>
