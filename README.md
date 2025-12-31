@@ -47,7 +47,7 @@ Solar PV systems often suffer from unnoticed performance degradation caused by d
   - Proximity
   - Light Irradiation
   - Altitude
-  - Pressue
+  - Pressure
   - Panel Temperature
   - Ambient Temperature
   - Dust particulate matter
