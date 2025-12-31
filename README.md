@@ -92,6 +92,7 @@ Solar PV systems often suffer from unnoticed performance degradation caused by d
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="50" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="50" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="50" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="50" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="50" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="50" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="50" />
@@ -102,9 +103,10 @@ Solar PV systems often suffer from unnoticed performance degradation caused by d
 
 <p align="center">
   <strong>
-    HTML • CSS • JavaScript • Node.js • Express.js • MongoDB • EJS • Python • C++
+    HTML • CSS • JavaScript • Bootstrap • Node.js • Express.js • MongoDB • EJS • Python • C++
   </strong>
 </p>
+
 
 ## 📌 Technologies
 
