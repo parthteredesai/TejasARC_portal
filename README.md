@@ -1,10 +1,10 @@
-## TejasArk 
+# TejasArk 
 
 *Published Date* : 31 Dec 2025
 
 *Title: Tejasark - Sonsor Based AI Powered Solar Panel Monitoring System*
 
-# TejasArk Portal
+## TejasArk 
 
 **TejasArk Portal** is a web application developed as an **IEEE Myosa Sensors Competition**. It serves as the main portal for the TejasArk team, providing dynamic views, user interaction, and content delivery using Node.js, Express, and EJS templating.
 
