@@ -73,9 +73,15 @@ Solar PV systems often suffer from unnoticed performance degradation caused by d
   <source src="images/tejasark_presentation.mp4" type="video/mp4">
 </video>
 
-[▶ Download & Watch Demo Video](images/tejasark_presentation.mp4)
+<video controls width="80%">
+  <source src="images/tejasark_demo.mp4" type="video/mp4">
+</video>
 
+[▶ Download & Watch Demo Video of TejasArk Presentation](images/tejasark_presentation.mp4)
 
+[▶ Download & Watch Demo Video of TejasArk Demonstration](images/tejasark_demo.mp4)
+
+*Due to file upload limitations we were unable to upload high quality videos, hence the video quality is low*
 
 
 ## 📌 Features
