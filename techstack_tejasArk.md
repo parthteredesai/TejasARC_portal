@@ -55,7 +55,7 @@ Solar PV systems often suffer from unnoticed performance degradation caused by d
 [cite_start]**Raspberry Pi** [cite: 134]
 [cite_start]**MQTT** [cite: 135]
 
-## 📌 Features
+## 📌 Technologies
 
 - 🔹 Frontend
 
