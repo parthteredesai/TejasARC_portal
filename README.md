@@ -33,7 +33,7 @@ We are also thankful to our mentor, [Ms. Valentina Basker](https://ieeexplore.ie
 
 ## Overview
 
-Solar PV systems often suffer from unnoticed performance degradation caused by dust buildup, environmental stress, and hidden technical faults, leading to reduced energy output and higher maintenance costs. This project addresses the problem through a sensor-driven IoT framework that continuously monitors temperature, voltage, current, irradiance, and environmental parameters to detect faults and efficiency loss in real time. AI-based analytics are applied as a secondary layer to predict performance decline and recommend timely maintenance, resulting in a low-cost, self-diagnostic solution that improves reliability and minimizes downtime.
+Solar PV systems often suffer from unnoticed performance degradation caused by dust buildup, environmental stress, and hidden technical faults, leading to reduced energy output and higher maintenance costs. This project addresses the problem through a sensor-driven IoT framework that continuously monitors temperature, voltage, current, irradiance, and several other environmental parameters to detect faults and efficiency loss in real time. AI-based analytics are applied as a secondary layer to predict decline in performance and recommend timely maintenance, resulting in a low-cost, self-diagnostic solution that improves reliability and minimizes downtime.
 
 ## Demo / Examples
 ## Parameters detected by TejasArk System
