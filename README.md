@@ -99,7 +99,7 @@ Solar PV systems often suffer from unnoticed performance degradation caused by d
 
 *Due to file upload limitations we were unable to upload high quality videos, hence the video quality is low*
 
-
+*Click on the link above, then click on view raw & download will start on your device*
 ## 📌 Features
 
 -  Dynamic content rendering using **EJS templates**
