@@ -109,4 +109,56 @@ Render – Deployment (as applicable)
 
 Python – Data preprocessing and AI logic
 
-Flask - 
+Flask: micro-web framework
+
+Tensorflow/Keras: Used to built and train deep nueral network model
+
+Scikit learn: Data Processing Operations
+
+Numpy & Pandas - For numerical calculations
+
+Machine Learning Models – Solar performance insights and predictions
+
+## Requirements / Installation
+1. **Clone the repo**
+
+   ```bash
+   git clone https://github.com/parthteredesai/TejasArk_portal.git
+2. Navigate to project folder
+   cd TejasArk_portal
+
+3.Install dependencies
+<ul>
+  
+  All required dependencies are in package.json.
+  In your project terminal inside /TejasArk_portal perform **npm install**. It will automatically download all required   depencies in your system.
+  
+  steps:
+  <li>1️⃣ Prerequisites : You must have Node.js installed (which includes npm) </li>
+  <li>2️⃣ Clone the repository :
+    ```bash
+    
+    git clone https://github.com/parthteredesai/TejasArk_portal.git
+    cd TejasArk_portal
+  </li>
+  <li>3️⃣ Install dependencies :
+   ```bash
+    
+    npm install
+  </li>
+  <li>4️⃣ Start the application :
+    ```bash
+
+    npm start
+   or
+    ```bash
+
+    node app.js 
+
+   The application should now be running at http://localhost:8080/. 
+  </li>
+</ul>
+
+## 📌 Important
+
+- 🔹make your owm .env file for weather.api & Mongodb URL
