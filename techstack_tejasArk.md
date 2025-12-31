@@ -163,4 +163,4 @@ Machine Learning Models – Solar performance insights and predictions
 
 ## 📌 Important
 
-- make your owm .env file for weather.api & Mongodb URL
+- make your own .env file for weather.api & Mongodb URL
