@@ -98,4 +98,6 @@
 None
 
 📧 Contact
-Team TejasArk-
+Team TejasArk
+
+Email: ds62442.phnx@student.sfit.ac.in,  parth.teredesai@student.sfit.ac.in,  arhaanshaikh020@student.sfit.ac.in
