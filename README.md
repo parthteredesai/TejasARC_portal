@@ -212,6 +212,42 @@ Machine Learning Models – Solar performance insights and predictions
   </li>
 </ul>
 
+<ul>
+   *Steps to setup AI model server*
+  
+  steps:
+  <li>1️⃣ Install all these required libraries :
+    ```bash
+    
+    pip install tensorflow flask scikit-learn pandas numpy pymongo python-dotenv requests joblib
+    
+  </li>
+  <li>2️⃣ Create the environment:
+    ```bash
+    
+    python -m venv venv
+  </li>
+  <li>3️⃣ Install the requirements:
+   ```bash
+    
+    pip install -r requirements.txt
+  </li>
+  <li>4️⃣ Verification:
+    ```bash
+    
+    import tensorflow as tf
+    import sklearn
+    import flask
+    import pymongo
+
+    print(f"TensorFlow: {tf.__version__}")
+    print(f"Scikit-Learn: {sklearn.__version__}")
+    print("All libraries loaded successfully.")
+
+    
+  </li>
+</ul>
+
 ## 📌 Important
 
 - make your own .env file for weather.api & Mongodb URL
