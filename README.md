@@ -80,11 +80,11 @@ Solar PV systems often suffer from unnoticed performance degradation caused by d
 
 ## 📌 Features
 
-- 🔹 Dynamic content rendering using **EJS templates**
-- 🔹 Structured routing via **Express.js**
-- 🔹 Static assets served from `public/` (CSS, images)
-- 🔹 MVC-like organization (`models`, `views`, etc.)
-- 🔹 Easy setup for development and deployment
+-  Dynamic content rendering using **EJS templates**
+-  Structured routing via **Express.js**
+-  Static assets served from `public/` (CSS, images)
+-  MVC-like organization (`models`, `views`, etc.)
+-  Easy setup for development and deployment
 
 ## Usage Instructions
 
