@@ -31,6 +31,12 @@ Solar PV systems often suffer from unnoticed performance degradation caused by d
 <i>TejasArk Dashboard</i>
 </p>
 
+<p align="center">
+<img src="./images/hardware1.png" alt="Folder Architecture" width="300" hight="300"><br/>
+<img src="./images/hardware2.png" alt="Folder Architecture" width="300" hight="300"><br/>
+<i>TejasArk Dashboard</i>
+</p>
+
 ## Tech Stack
 
 <p align="center">
@@ -50,10 +56,6 @@ Solar PV systems often suffer from unnoticed performance degradation caused by d
     HTML • CSS • JavaScript • Node.js • Express.js • MongoDB • EJS • Python • C++
   </strong>
 </p>
-
-[cite_start]**Python** [cite: 133]
-[cite_start]**Raspberry Pi** [cite: 134]
-[cite_start]**MQTT** [cite: 135]
 
 ## 📌 Technologies
 
