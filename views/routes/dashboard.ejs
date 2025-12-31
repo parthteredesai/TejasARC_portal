@@ -289,40 +289,45 @@
           </div>
 
           <script>
-            async function loadSolarData() {
-            const res = await fetch("/api/solar"); 
-            const data = await res.json();
+async function loadSolarData() {
+  const res = await fetch("/api/solar");
+  const data = await res.json();
 
-            const N = 20;
-            const recent = data.slice(-N).reverse();
+  // Reverse to oldest → newest
+  const ordered = data.reverse();
 
-            const labels = recent.map(d => new Date(d.insight.timestamp).toLocaleTimeString());
+  const labels = ordered.map(d =>
+    new Date(d.insight.timestamp).toLocaleTimeString()
+  );
 
-            const efficiency = recent.map(d => d.insight.live_diagnosis.efficiency_pct);
+  const efficiency = ordered.map(d =>
+    d.insight.live_diagnosis.efficiency_pct
+  );
 
-            new Chart(document.getElementById("efficiencyChart"), {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: "Efficiency",
-                        data: efficiency,
-                        borderWidth: 2,
-                        borderColor: "#0d4e87",
-                        backgroundColor: "rgba(30,136,229,0.15)",
-                        tension: 0.3,
-                        fill: true
-                    }]
-                },
-                options: {
-                        responsive: true,
-                        maintainAspectRatio: false 
-                }
-            });
-        }
+  new Chart(document.getElementById("efficiencyChart"), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: "Efficiency (%)",
+        data: efficiency,
+        borderWidth: 2,
+        borderColor: "#0d4e87",
+        backgroundColor: "rgba(30,136,229,0.15)",
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false
+    }
+  });
+}
 
-        loadSolarData();
-        </script>
+loadSolarData();
+</script>
+
         </div>
         <!-- ////////////////////////////////////////////////////////// -->
          <div class="sub-sec2-2x2">
