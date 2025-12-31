@@ -2,7 +2,7 @@
 
 *Published Date* : 31 Dec 2025
 
-*Title: Tejasark - Sonsor Based AI Powered Solar Panel Monitoring System*
+## *Title: Tejasark - Sonsor Based AI Powered Solar Panel Monitoring System*
 
 ## TejasArk 
 
@@ -46,9 +46,23 @@ Solar PV systems often suffer from unnoticed performance degradation caused by d
 </p>
 
 <p align="center">
-  <img src="./images/hardware1.jpeg" width="300" height="500" />
-  <img src="./images/hardware2.jpeg" width="300" /><br/>
-  <i>TejasArk Hardware</i>
+  <img src="./images/panel_front.png" width="400" height="400" /><br/>
+  <i>TejasArk Front Panel</i>
+</p>
+
+<p align="center">
+  <img src="./images/hardware_cir.png" width="400" height="400" /><br/>
+  <i>TejasArk Circuit</i>
+</p>
+
+<p align="center">
+  <img src="./images/cir_sideview.png" width="400" height="400" /><br/>
+  <i>TejasArk Side view</i>
+</p>
+
+<p align="center">
+  <img src="./images/front_sensor.png" width="400" height="400" /><br/>
+  <i>TejasArk On Panel Sensor</i>
 </p>
 
 ## 📌 Features
@@ -205,7 +219,7 @@ Machine Learning Models – Solar performance insights and predictions
 ## Folder Architecture
 <img src="./images/folders.png" alt="Folder Architecture" width="600" hight="600">
 
-🤝 Contributing
+# 🤝 Contributing
 ## Contributions are welcome! Please follow these steps:
 - Fork the Project.
 - Create your Feature Branch (git checkout -b feature/Feature).
