@@ -35,7 +35,7 @@ Solar PV systems often suffer from unnoticed performance degradation caused by d
 ## Demo / Examples
 ### Images
 <p align="center">
-<img src="./images/mainpage.png" alt="Folder Architecture" width="600" hight="600"><br/>
+<img src="./images/tejasark_coverpage.png" alt="Folder Architecture" width="600" hight="600"><br/>
 <i>TejasArk Main Page</i>
 </p>
 
