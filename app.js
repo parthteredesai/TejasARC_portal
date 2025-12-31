@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/main", async (req, res) => {
-   const alertData = await AIDataCollection.findOne().sort({ _id: -1 });
+   const alertData = await AIDataCollection.findOne().sort({ _id: -1 }).lean();
 
   //  console.log(alertData);
   res.render("routes/main", {alertData});
@@ -77,7 +77,7 @@ app.get("/dashboard", async (req, res) => {
 
 
 app.get("/api/solar", async (req, res) => {
-    const data = await AIDataCollection.find().sort({ _id: -1 }).lean();
+    const data = await AIDataCollection.find().sort({ _id : -1 }).lean();
     res.json(data);
 });
 
@@ -87,7 +87,7 @@ app.get("/panel", async (req, res) => {
 });
 
 app.get("/notifications", async (req, res) => {
-  const allData = await AIDataCollection.find().sort({ "_id": -1 });
+  const allData = await AIDataCollection.find().sort({ _id: -1 });
 
   res.render("routes/notifications",  {allData});
 });

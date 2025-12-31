@@ -106,19 +106,21 @@
     </div>
   </div>
 
-  <% 
+  <%
   if (
     alertData &&
     alertData.insight.weather_benchmark &&
-    alertData.insight.live_diagnosis.action !== "None"
-  ) { 
+    alertData.insight.weather_benchmark.recommendation
+  ) {
 %>
+
   <div id="alertModal" class="modal-overlay">
     <div class="modal-box">
       <h3> System Alert</h3>
-
+      <h2><strong>Action :<%= alertData.insight.live_diagnosis.action %></strong></h2>
       <h4><%= alertData.insight.weather_benchmark.recommendation %></h4>
-      <h2><%= alertData.insight.live_diagnosis.action %></h2>
+      <h5><%= alertData.insight.expert_recommendation %></h5>
+      
 
       <button id="closeModal">Close</button>
     </div>
