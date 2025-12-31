@@ -57,7 +57,7 @@ Solar PV systems often suffer from unnoticed performance degradation caused by d
 
 ## 📌 Technologies
 
-- 🔹 Frontend
+-  Frontend
 
 HTML5 – Structure and semantic layout
 
@@ -67,35 +67,35 @@ JavaScript (ES6) – Client-side logic, charts, and API handling
 
 EJS (Embedded JavaScript) – Server-side templating for dynamic views
 
-- 🔹 Backend
+-  Backend
 
 Node.js – Runtime environment for backend services
 
 Express.js – RESTful API development and routing
 
-- 🔹 Database
+-  Database
 
 MongoDB Atlas – Cloud-based NoSQL database for storing sensor and AI data
 
 Mongoose – ODM for schema modeling and database interaction
 
-- 🔹 IoT & Data Source
+-  IoT & Data Source
 
 MYOSA Motherboard – Real-time sensor data acquisition
 
 Solar Panel Sensors – Voltage, current, power monitoring
 
-- 🔹 APIs & Integrations
+-  APIs & Integrations
 
 REST APIs – Data exchange between IoT devices and web dashboard
 
 OpenWeather API – Weather-based contextual insights (optional module)
 
-- 🔹 Visualization
+-  Visualization
 
 Chart.js – Real-time data visualization (graphs & trends)
 
-- 🔹 Development & Deployment
+-  Development & Deployment
 
 Git & GitHub – Version control and collaboration
 
@@ -105,7 +105,7 @@ Arduino IDE - Hardware side coding
 
 Render – Deployment (as applicable)
 
-- 🔹 AI / Analytics
+-  AI / Analytics
 
 Python – Data preprocessing and AI logic
 
@@ -161,4 +161,4 @@ Machine Learning Models – Solar performance insights and predictions
 
 ## 📌 Important
 
-- 🔹make your owm .env file for weather.api & Mongodb URL
+- make your owm .env file for weather.api & Mongodb URL
