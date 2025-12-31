@@ -11,7 +11,7 @@
 Excerpt:
 Undetected faults and environmental effects significantly reduce solar efficiency. TejasArk delivers Sensor based AI supported solution for real-time PV monitoring, fualt detection, and predictive maintenance.
 
-<img src="./images/tejasark_covepage.png" alt="Folder Architecture" width="600" hight="600">
+<img src="./images/tejasark_coverpage.png" alt="Folder Architecture" width="600" hight="600">
 
 ## tags:
   - solar-energy
