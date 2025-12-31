@@ -189,23 +189,23 @@ Git & GitHub – Version control and collaboration
 
 VS Code – Development environment
 
-Arduino IDE - Hardware side coding
+Arduino IDE - Embedded coding in C++
 
 Render – Deployment (as applicable)
 
 - # AI / Analytics
 
-Python – Data preprocessing and AI logic
+Python: Data preprocessing and AI logic
 
-Flask: micro-web framework
+Flask: Micro-web framework
 
-Tensorflow/Keras: Used to built and train deep nueral network model
+Tensorflow/Keras: Used to built and train deep neural network model
 
 Scikit learn: Data Processing Operations
 
-Numpy & Pandas - For numerical calculations
+Numpy & Pandas: Deriving Mathematical relations in AI logic
 
-Machine Learning Models – Solar performance insights and predictions
+Machine Learning Models: Solar performance insights and predictions
 
 ## Requirements / Installation
 1. **Clone the repo**
