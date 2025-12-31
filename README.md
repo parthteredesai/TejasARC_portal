@@ -2,7 +2,7 @@
 
 *Published Date* : 31 Dec 2025
 
-## *Title: Tejasark - Sonsor Based AI Powered Solar Panel Monitoring System*
+## *Title: Tejasark - Sensor Based AI Powered Solar Panel Monitoring System*
 
 ## TejasArk 
 
