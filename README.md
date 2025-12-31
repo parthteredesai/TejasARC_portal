@@ -6,10 +6,10 @@
 
 ## TejasArk 
 
-**TejasArk Portal** is a web application developed as an **IEEE Myosa Sensors Competition**. It serves as the main portal for the TejasArk team, providing dynamic views, user interaction, and content delivery using Node.js, Express, and EJS templating.
+**TejasArk Portal** is a web application developed for an **IEEE Myosa Sensors Competition**. It serves main portal for the TejasArk Solar Monitoring System, providing dynamic views, user interaction, and content delivery using Node.js, Express, and EJS templating.
 
 Excerpt:
-Undetected faults and environmental effects significantly reduce solar efficiency. TejasArk delivers Sensor based AI supported solution for real-time PV monitoring, fualt detection, and predictive maintenance.
+Undetected faults and environmental effects significantly reduce solar efficiency. TejasArk delivers Sensor based AI supported solution for real-time PV monitoring, fault detection, and predictive maintenance.
 
 <p align="center">
 <img src="./images/tejasark_coverpage.png" alt="Folder Architecture" width="600" hight="600"><br/>
