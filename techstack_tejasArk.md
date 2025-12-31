@@ -32,9 +32,9 @@ Solar PV systems often suffer from unnoticed performance degradation caused by d
 </p>
 
 <p align="center">
-<img src="./images/hardware1.png" alt="Folder Architecture" width="300" hight="300"><br/>
-<img src="./images/hardware2.png" alt="Folder Architecture" width="300" hight="300"><br/>
-<i>TejasArk Dashboard</i>
+<img src="./images/hardware1.jpeg" alt="Folder Architecture" width="300" hight="300"><br/>
+<img src="./images/hardware2.jpeg" alt="Folder Architecture" width="300" hight="300"><br/>
+<i>TejasArk Hardware</i>
 </p>
 
 ## Tech Stack
