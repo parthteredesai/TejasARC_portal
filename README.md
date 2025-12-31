@@ -69,6 +69,13 @@ Solar PV systems often suffer from unnoticed performance degradation caused by d
   <i>TejasArk On Panel Sensor</i>
 </p>
 
+<p align="center">
+  <video controls width="80%">
+    <source src="./images/tejasark_presentation.mp4" type="video/mp4">
+  </video><br/>
+  <i>Live demonstration of the tejasARC monitoring system</i>
+</p>
+
 ## 📌 Features
 
 - 🔹 Dynamic content rendering using **EJS templates**
