@@ -15,6 +15,7 @@ Undetected faults and environmental effects significantly reduce solar efficienc
 <img src="./images/tejasark_coverpage.png" alt="Folder Architecture" width="600" hight="600"><br/>
 <i>TejasArk Cover Page</i>
 </p>
+
 ## tags:
   - solar-energy
   - iot-monitoring
