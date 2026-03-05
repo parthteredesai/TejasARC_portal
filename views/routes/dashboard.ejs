@@ -10,8 +10,8 @@
     const lastEntry = allData[allData.length - 1];
     const ts = new Date(lastEntry.insight.timestamp);
 
-    const date = ts.toLocaleDateString();   // e.g. 26/12/2025
-    const time = ts.toLocaleTimeString();   // e.g. 5:32:18 PM
+    const date = ts.toLocaleDateString("en-IN", { timeZone: "Asia/Kolkata" });
+    const time = ts.toLocaleTimeString("en-IN", { timeZone: "Asia/Kolkata" });
   %>
 
   <h5>Date : <%= date %></h5>
