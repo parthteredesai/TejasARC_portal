@@ -1,20 +1,14 @@
 # TejasArk 
 
-*Published Date* : 31 Dec 2025
 
 ## *Title: TejasArk - Sensor Based AI Powered Solar Panel Monitoring System*
 
 ## TejasArk 
 
-**TejasArk Portal** is a web application developed for an **IEEE Myosa Sensors Competition**. It serves main portal for the TejasArk Solar Monitoring System, providing dynamic views, user interaction, and content delivery using Node.js, Express, and EJS templating.
+**TejasArk Portal** is a web application. It serves main portal for the TejasArk Solar Monitoring System, providing dynamic views, user interaction, and content delivery using Node.js, Express, and EJS templating.
 
 Excerpt:
 Undetected faults and environmental effects significantly reduce solar efficiency. TejasArk delivers Sensor based AI supported solution for real-time PV monitoring, fault detection, and predictive maintenance.
-
-<p align="center">
-<img src="./images/tejasark_coverpage.png" alt="Folder Architecture" width="600" hight="600"><br/>
-<i>TejasArk Cover Page</i>
-</p>
 
 ## tags:
   - solar-energy
@@ -27,9 +21,7 @@ Undetected faults and environmental effects significantly reduce solar efficienc
 
 ## Acknowledgements
 
-We, Team TejasArk would like to express our sincere gratitude to the **IEEE Sensors Council** and the **MYOSA 4.0** team for providing the platform and resources to develop this project. The MYOSA Mini Kit and open-source environment were instrumental in the prototyping of TejasArk. 
-
-We are also thankful to our mentor, [Ms. Valentina Basker](https://ieeexplore.ieee.org/author/37088858636) as well as our college [St. Francis Institute Of Technology](https://www.sfit.ac.in/) for their invaluable guidance and support.
+We are thankful to our mentor, [Ms. Valentina Basker](https://ieeexplore.ieee.org/author/37088858636) as well as our college [St. Francis Institute Of Technology](https://www.sfit.ac.in/) for their invaluable guidance and support.
 
 ## Overview
 
@@ -85,21 +77,6 @@ Solar PV systems often suffer from unnoticed performance degradation caused by d
   <i>TejasArk On Panel Sensor</i>
 </p>
 
-<video controls width="80%">
-  <source src="images/tejasark_presentation.mp4" type="video/mp4">
-</video>
-
-<video controls width="80%">
-  <source src="images/tejasark_demo.mp4" type="video/mp4">
-</video>
-
-[▶ Download & Watch Video of TejasArk Presentation](images/tejasark_presentation.mp4)
-
-[▶ Download & Watch Video of TejasArk Demonstration](images/tejasark_demo.mp4)
-
-*Due to file upload limitations we were unable to upload high quality videos, hence the video quality is low*
-
-*Click on the link above, then click on view raw & download will start on your device*
 ## 📌 Features
 
 -  Dynamic content rendering using **EJS templates**
