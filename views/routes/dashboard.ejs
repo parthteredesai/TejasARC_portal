@@ -435,8 +435,8 @@ loadForecastEfficiency();
           const dst = espdata.dst; 
           const tsp = new Date(espdata.ts);
 
-    const espdate = tsp.toLocaleDateString();   // e.g. 26/12/2025
-    const esptime = tsp.toLocaleTimeString();   // e.g. 5:32:18 PM
+    const espdate = ts.toLocaleDateString("en-IN", { timeZone: "Asia/Kolkata" });   // e.g. 26/12/2025
+    const esptime = ts.toLocaleTimeString("en-IN", { timeZone: "Asia/Kolkata" });   // e.g. 5:32:18 PM
           %>
           <ul>
               <li><b> Date & Time :</b> <%= espdate %> <%= esptime %> </li>
